@@ -10,8 +10,12 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 
 /**
  * Created by stdio2016 on 2017/6/19.
@@ -33,12 +37,7 @@ public class TestBlock {
         GameRegistry.addSmelting(Items.STONE_SWORD, new ItemStack(Items.STONE_SWORD), 0.0f);
     }
 
-    public void preInit(FMLPreInitializationEvent event) {
-        GameRegistry.register(block);
-        GameRegistry.register(item);
-    }
-
-    public void init() {
+    public static void preInit(FMLPreInitializationEvent event) {
 
     }
 
@@ -46,6 +45,21 @@ public class TestBlock {
         public TestBlock_() {
             super(Material.GLASS);
             setSoundType(SoundType.GLASS);
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = ExampleMod.MODID)
+    public static class RegistrationHandler {
+        @SubscribeEvent
+        public static void registerBlocks(final RegistryEvent.Register<Block> event) {
+            final IForgeRegistry<Block> reg = event.getRegistry();
+            reg.register(block);
+        }
+
+        @SubscribeEvent
+        public static void registerItems(final RegistryEvent.Register<Item> event) {
+            final IForgeRegistry<Item> reg = event.getRegistry();
+            reg.register(item);
         }
     }
 }
