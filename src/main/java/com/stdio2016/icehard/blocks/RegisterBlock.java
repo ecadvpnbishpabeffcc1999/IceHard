@@ -20,31 +20,16 @@ import net.minecraftforge.registries.IForgeRegistry;
  * Created by stdio2016 on 2017/6/19.
  */
 
-public class TestBlock {
-    public static TestBlock_ block;
+public class RegisterBlock {
+    public static BlockIceHard block;
     public static Item item;
     static {
-        block = new TestBlock_();
-        block.setUnlocalizedName("icehard").
-                setRegistryName("icehard").
-                setCreativeTab(CreativeTabs.TOOLS).
-                setHardness(5f).
-                setHarvestLevel("pickaxe",0);
-        item = new ItemBlock(block);
-        item.setUnlocalizedName("icehard");
-        item.setRegistryName("icehard");
         GameRegistry.addSmelting(Items.STONE_SWORD, new ItemStack(Items.STONE_SWORD), 0.0f);
     }
 
     public static void preInit(FMLPreInitializationEvent event) {
-
-    }
-
-    static public class TestBlock_ extends Block {
-        public TestBlock_() {
-            super(Material.GLASS);
-            setSoundType(SoundType.GLASS);
-        }
+        block = new BlockIceHard("icehard");
+        item = block.item;
     }
 
     @Mod.EventBusSubscriber(modid = IceHardMod.MODID)

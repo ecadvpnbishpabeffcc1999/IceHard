@@ -1,12 +1,16 @@
 package com.stdio2016.icehard;
 
-import com.stdio2016.icehard.blocks.TestBlock;
+import com.stdio2016.icehard.blocks.RegisterBlock;
 import com.stdio2016.icehard.proxy.CommonProxy;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = IceHardMod.MODID, version = IceHardMod.VERSION)
 public class IceHardMod
@@ -16,13 +20,19 @@ public class IceHardMod
     public static final String ClientOnlyClass = "com.stdio2016.icehard.proxy.ClientOnly";
     public static final String ServerOnlyClass = "com.stdio2016.icehard.proxy.ServerOnly";
 
-    public final TestBlock testBlockInst = new TestBlock();
+    public static final CreativeTabs ourTab = new CreativeTabs(MODID) {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public ItemStack getTabIconItem() {
+            return new ItemStack(RegisterBlock.block);
+        }
+    };
     @SidedProxy(clientSide = ClientOnlyClass, serverSide = ServerOnlyClass)
     public static CommonProxy proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        testBlockInst.preInit(event);
+        proxy.preInit(event);
     }
 
     @EventHandler

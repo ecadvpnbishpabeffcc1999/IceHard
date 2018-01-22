@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "identifier",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:stone",
+      "data": 0,
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone",
+    "data": 0,
+    "count": 1
+  }
+}
