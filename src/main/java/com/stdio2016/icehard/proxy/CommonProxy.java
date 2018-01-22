@@ -1,6 +1,7 @@
 package com.stdio2016.icehard.proxy;
 
 import com.stdio2016.icehard.blocks.RegisterBlock;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent ev) {
         RegisterBlock.preInit(ev);
+        MinecraftForge.EVENT_BUS.register(RegisterBlock.class);
     }
 
     public void init(FMLInitializationEvent ev) {

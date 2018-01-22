@@ -16,34 +16,46 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by stdio2016 on 2017/6/19.
  */
 
 public class RegisterBlock {
-    public static BlockIceHard block;
-    public static Item item;
+    public static BlockIceHard iceHard[];
+
+    public static List<Block> blocks = new ArrayList<>();
+    public static List<Item> items = new ArrayList<>();
+
     static {
         GameRegistry.addSmelting(Items.STONE_SWORD, new ItemStack(Items.STONE_SWORD), 0.0f);
     }
 
     public static void preInit(FMLPreInitializationEvent event) {
-        block = new BlockIceHard("icehard");
-        item = block.item;
+        iceHard = new BlockIceHard[BlockIceHard.iceHardNames.length];
+        // add ice hards
+        for (int i = 0; i < iceHard.length; i++) {
+            iceHard[i] = new BlockIceHard("icehard_" + BlockIceHard.iceHardNames[i]);
+            blocks.add(iceHard[i]);
+            items.add(iceHard[i].item);
+        }
     }
 
-    @Mod.EventBusSubscriber(modid = IceHardMod.MODID)
-    public static class RegistrationHandler {
-        @SubscribeEvent
-        public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-            final IForgeRegistry<Block> reg = event.getRegistry();
-            reg.register(block);
+    @SubscribeEvent
+    public static void registerBlocks(final RegistryEvent.Register<Block> event) {
+        final IForgeRegistry<Block> reg = event.getRegistry();
+        for (Block b : blocks) {
+            reg.register(b);
         }
+    }
 
-        @SubscribeEvent
-        public static void registerItems(final RegistryEvent.Register<Item> event) {
-            final IForgeRegistry<Item> reg = event.getRegistry();
-            reg.register(item);
+    @SubscribeEvent
+    public static void registerItems(final RegistryEvent.Register<Item> event) {
+        final IForgeRegistry<Item> reg = event.getRegistry();
+        for (Item i : items) {
+            reg.register(i);
         }
     }
 }

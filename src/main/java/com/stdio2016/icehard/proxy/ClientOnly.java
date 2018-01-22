@@ -1,6 +1,7 @@
 package com.stdio2016.icehard.proxy;
 
 import com.stdio2016.icehard.IceHardMod;
+import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
@@ -15,8 +16,11 @@ public class ClientOnly extends CommonProxy {
     public final String MODID = IceHardMod.MODID;
     @Override
     public void init(FMLInitializationEvent ev) {
-        addImageForItem(RegisterBlock.item);
-   }
+        super.init(ev);
+        for (Item i: RegisterBlock.items) {
+            addImageForItem(i);
+        }
+    }
 
     private void addImageForItem(Item item) {
         ItemModelMesher modelMesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();

@@ -12,6 +12,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.awt.*;
+
 @Mod(modid = IceHardMod.MODID, version = IceHardMod.VERSION)
 public class IceHardMod
 {
@@ -24,22 +26,26 @@ public class IceHardMod
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return new ItemStack(RegisterBlock.block);
+            return new ItemStack(RegisterBlock.iceHard[0]);
         }
     };
     @SidedProxy(clientSide = ClientOnlyClass, serverSide = ServerOnlyClass)
     public static CommonProxy proxy;
+    @Mod.Instance
+    public static IceHardMod me;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        System.out.println("preinit IceHard");
         proxy.preInit(event);
+        System.out.println("preinit IceHard successful!");
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        System.out.println("IceHard is really hard!");
+        System.out.println("init IceHard");
         proxy.init(event);
+        System.out.println("IceHard is really hard!");
     }
 }

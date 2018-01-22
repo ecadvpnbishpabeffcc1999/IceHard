@@ -12,6 +12,10 @@ import net.minecraft.item.ItemBlock;
  * Created by User on 2018/1/22.
  */
 public class BlockIceHard extends Block {
+    public static final String iceHardNames[] = {
+            "blue", "green", "yellow", "orange",
+            "red", "purple", "lightblue"
+    };
     public final ItemBlock item;
 
     public BlockIceHard(String name) {
