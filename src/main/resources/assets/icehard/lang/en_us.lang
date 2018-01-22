@@ -1,2 +1,8 @@
-tile.icehard.name=Ice hard
-itemGroup.icehard=Ice hard
+tile.icehard_blue.name=Blue Ice Hard
+tile.icehard_green.name=Greem Ice Hard
+tile.icehard_yellow.name=Yellow Ice Hard
+tile.icehard_orange.name=Orange Ice Hard
+tile.icehard_red.name=Red Ice Hard
+tile.icehard_purple.name=Purple Ice Hard
+tile.icehard_light.name=Light Ice Hard
+itemGroup.icehard=Ice Hard

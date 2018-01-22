@@ -26,7 +26,8 @@ public class IceHardMod
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            return new ItemStack(RegisterBlock.iceHard[0]);
+            int highestLv = RegisterBlock.iceHard.length-1;
+            return new ItemStack(RegisterBlock.iceHard[highestLv]);
         }
     };
     @SidedProxy(clientSide = ClientOnlyClass, serverSide = ServerOnlyClass)

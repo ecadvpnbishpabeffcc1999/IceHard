@@ -1,2 +1,8 @@
-tile.icehard.name=冰硬石
+tile.icehard_blue.name=藍色冰硬石
+tile.icehard_green.name=綠色冰硬石
+tile.icehard_yellow.name=黃色冰硬石
+tile.icehard_orange.name=橘色冰硬石
+tile.icehard_red.name=紅色冰硬石
+tile.icehard_purple.name=紫色冰硬石
+tile.icehard_light.name=亮冰硬石
 itemGroup.icehard=冰硬石
