@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/icehard_orange",
+    "down": "icehard:blocks/icehard_orange",
+    "north": "icehard:blocks/icehard_orange",
+    "south": "icehard:blocks/icehard_orange",
+    "west": "icehard:blocks/icehard_orange",
+    "east": "icehard:blocks/icehard_orange",
+    "particle": "icehard:blocks/icehard_orange"
+  }
+}

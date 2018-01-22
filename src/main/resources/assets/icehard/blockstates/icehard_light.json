@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model":"icehard:icehard_light"
+    }
+  }
+}
