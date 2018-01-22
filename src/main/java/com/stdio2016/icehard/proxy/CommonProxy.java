@@ -1,4 +1,4 @@
-package com.stdio2016.icehard;
+package com.stdio2016.icehard.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
