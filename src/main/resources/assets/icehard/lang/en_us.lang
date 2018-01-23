@@ -5,4 +5,5 @@ tile.icehard_orange.name=Orange Ice Hard
 tile.icehard_red.name=Red Ice Hard
 tile.icehard_purple.name=Purple Ice Hard
 tile.icehard_light.name=Light Ice Hard
+item.energypile.name=Energy Pile
 itemGroup.icehard=Ice Hard
