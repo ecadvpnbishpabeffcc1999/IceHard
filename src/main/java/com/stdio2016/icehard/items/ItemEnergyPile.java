@@ -1,19 +1,17 @@
 package com.stdio2016.icehard.items;
 
-import com.stdio2016.icehard.IceHardMod;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 /**
  * Created by User on 2018/1/23.
  */
-public class ItemEnergyPile extends Item {
+public class ItemEnergyPile extends MyItem {
     public static Item item = new ItemEnergyPile();
+    public static final String name = "energypile";
 
     protected ItemEnergyPile() {
-        final String name = "energypile";
-        this.setUnlocalizedName(name).setRegistryName(name);
-        this.setCreativeTab(IceHardMod.ourTab);
+        super(name);
     }
 
     @Override

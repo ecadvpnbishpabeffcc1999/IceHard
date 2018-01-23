@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "icehard_energy",
+  "result": {"item": "icehard_blue", "count": 5},
+  "ingredients": [
+    {"item": "icehard_orange"}
+  ]
+}

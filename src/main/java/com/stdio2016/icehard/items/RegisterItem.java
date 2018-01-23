@@ -14,10 +14,13 @@ import java.util.List;
  */
 
 public class RegisterItem {
+    public static MyItem copperNugget;
     public static List<Item> items = new ArrayList<>();
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
+        copperNugget = new MyItem("copper_nugget");
+        items.add(copperNugget);
     }
 
     @SubscribeEvent
