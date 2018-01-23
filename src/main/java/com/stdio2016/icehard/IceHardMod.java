@@ -46,6 +46,6 @@ public class IceHardMod
     {
         System.out.println("init IceHard");
         proxy.init(event);
-        System.out.println("IceHard is really hard!");
+        System.out.println("init IceHard successful!");
     }
 }

@@ -28,10 +28,6 @@ public class RegisterBlock {
     public static List<Block> blocks = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
 
-    static {
-        GameRegistry.addSmelting(Items.STONE_SWORD, new ItemStack(Items.STONE_SWORD), 0.0f);
-    }
-
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
         blocks.addAll(Lists.newArrayList(BlockIceHard.iceHard));
