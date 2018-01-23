@@ -2,8 +2,10 @@ package com.stdio2016.icehard.items;
 
 import com.stdio2016.icehard.IceHardMod;
 import com.stdio2016.icehard.blocks.BlockIceHard;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +40,9 @@ public class ItemIceHardSword extends ItemSword {
 
         items = new ArrayList<>();
         for (int i = 0; i < settings.length; i++) {
-            items.add(new ItemIceHardSword("icehard_sword_"+BlockIceHard.iceHardNames[i], settings[i]));
+            ItemIceHardSword s = new ItemIceHardSword("icehard_sword_"+BlockIceHard.iceHardNames[i], settings[i]);
+            items.add(s);
+            GameRegistry.addSmelting(s, new ItemStack(s), 0.0f);
         }
     }
 }
