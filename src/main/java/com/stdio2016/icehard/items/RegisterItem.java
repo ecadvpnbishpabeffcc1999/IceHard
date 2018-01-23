@@ -1,7 +1,9 @@
 package com.stdio2016.icehard.items;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
@@ -21,10 +23,15 @@ public class RegisterItem {
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
         copper = new MyItem("copper");
-        OreDictionary.registerOre("ingotCopper", copper);
         items.add(copper);
         copperNugget = new MyItem("copper_nugget");
         items.add(copperNugget);
+    }
+
+    public static void init(FMLInitializationEvent event) {
+        OreDictionary.registerOre("ingotCopper", copper);
+        OreDictionary.registerOre("nuggetCopper", copperNugget);
+        OreDictionary.registerOre("listAllwater", Items.WATER_BUCKET);
     }
 
     @SubscribeEvent

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "minecraft:ice",
+    "count": 8
+  },
+  "pattern": [
+    "mmm",
+    "mim",
+    "mmm"
+  ],
+  "key": {
+    "i": {"item": "icehard_blue"},
+    "m": {
+      "type": "minecraft:item_nbt",
+      "item": "ic2:fluid_cell",
+      "data": 0,
+      "nbt": {"Fluid": {"FluidName": "water", "Amount": 1000}}
+    }
+  }
+}

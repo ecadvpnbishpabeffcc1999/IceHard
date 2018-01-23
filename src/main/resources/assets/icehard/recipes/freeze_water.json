@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "result": {
-    "item": "energypile",
+    "item": "minecraft:ice",
     "count": 8
   },
   "pattern": [
-    "iii",
-    "ini",
-    "iii"
+    "mmm",
+    "mim",
+    "mmm"
   ],
   "key": {
     "i": {"item": "icehard_blue"},
-    "n": {"type": "forge:ore_dict", "ore": "nuggetCopper"}
+    "m": {"type": "forge:ore_dict", "ore": "listAllwater"}
   }
 }

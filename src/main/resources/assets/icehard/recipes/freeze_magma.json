@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "result": {
-    "item": "energypile",
+    "item": "minecraft:obsidian",
     "count": 8
   },
   "pattern": [
-    "iii",
-    "ini",
-    "iii"
+    "mmm",
+    "mim",
+    "mmm"
   ],
   "key": {
     "i": {"item": "icehard_blue"},
-    "n": {"type": "forge:ore_dict", "ore": "nuggetCopper"}
+    "m": {"item": "minecraft:magma"}
   }
 }

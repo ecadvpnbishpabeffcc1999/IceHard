@@ -6,4 +6,6 @@ tile.icehard_red.name=Red Ice Hard
 tile.icehard_purple.name=Purple Ice Hard
 tile.icehard_light.name=Light Ice Hard
 item.energypile.name=Energy Pile
+item.copper.name=Copper
+item.copper_nugget.name=Copper Nugget
 itemGroup.icehard=Ice Hard

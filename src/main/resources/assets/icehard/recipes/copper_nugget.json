@@ -4,6 +4,7 @@
     "item": "copper_nugget", "count": 16
   },
   "ingredients": [
-    {"type": "forge:ore_dict", "ore": "ingotCopper"}
+    {"type": "forge:ore_dict", "ore": "ingotCopper"},
+    {"type": "forge:ore_dict", "ore": "nuggetIron"}
   ]
 }

@@ -6,4 +6,6 @@ tile.icehard_red.name=紅色冰硬石
 tile.icehard_purple.name=紫色冰硬石
 tile.icehard_light.name=亮冰硬石
 item.energypile.name=能量堆
+item.copper.name=銅
+item.copper_nugget.name=銅粒
 itemGroup.icehard=冰硬石

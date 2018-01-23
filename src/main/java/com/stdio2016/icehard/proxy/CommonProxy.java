@@ -18,6 +18,6 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent ev) {
-
+        RegisterItem.init(ev);
     }
 }
