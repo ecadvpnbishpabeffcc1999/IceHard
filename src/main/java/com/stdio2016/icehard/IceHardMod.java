@@ -1,6 +1,6 @@
 package com.stdio2016.icehard;
 
-import com.stdio2016.icehard.blocks.RegisterBlock;
+import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -11,8 +11,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.awt.*;
 
 @Mod(modid = IceHardMod.MODID, version = IceHardMod.VERSION)
 public class IceHardMod
@@ -26,8 +24,8 @@ public class IceHardMod
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack getTabIconItem() {
-            int highestLv = RegisterBlock.iceHard.length-1;
-            return new ItemStack(RegisterBlock.iceHard[highestLv]);
+            int highestLv = BlockIceHard.iceHard.length-1;
+            return new ItemStack(BlockIceHard.iceHard[highestLv]);
         }
     };
     @SidedProxy(clientSide = ClientOnlyClass, serverSide = ServerOnlyClass)
@@ -47,6 +45,6 @@ public class IceHardMod
     {
         System.out.println("init IceHard");
         proxy.init(event);
-        System.out.println("IceHard is really hard!");
+        System.out.println("init IceHard successful!");
     }
 }

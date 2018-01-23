@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "copper_nugget", "count": 16
+  },
+  "ingredients": [
+    {"type": "forge:ore_dict", "ore": "oreCopper"}
+  ]
+}

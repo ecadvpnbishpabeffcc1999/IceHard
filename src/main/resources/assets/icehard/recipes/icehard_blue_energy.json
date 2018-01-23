@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_energy",
+  "result": {
+    "item": "energypile",
+    "count": 8
+  },
+  "pattern": [
+    "iii",
+    "ini",
+    "iii"
+  ],
+  "key": {
+    "i": {"item": "icehard_blue"},
+    "n": {"item": "copper_nugget"}
+  }
+}

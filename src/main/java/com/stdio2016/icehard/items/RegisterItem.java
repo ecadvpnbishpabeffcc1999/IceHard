@@ -1,7 +1,5 @@
-package com.stdio2016.icehard.blocks;
+package com.stdio2016.icehard.items;
 
-import com.google.common.collect.Lists;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -15,22 +13,14 @@ import java.util.List;
  * Created by stdio2016 on 2017/6/19.
  */
 
-public class RegisterBlock {
-    public static List<Block> blocks = new ArrayList<>();
+public class RegisterItem {
+    public static MyItem copperNugget;
     public static List<Item> items = new ArrayList<>();
 
     public static void preInit(FMLPreInitializationEvent event) {
-        BlockIceHard.registerBlocks();
-        blocks.addAll(Lists.newArrayList(BlockIceHard.iceHard));
-        items.addAll(Lists.newArrayList(BlockIceHard.iceHardItem));
-    }
-
-    @SubscribeEvent
-    public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-        final IForgeRegistry<Block> reg = event.getRegistry();
-        for (Block b : blocks) {
-            reg.register(b);
-        }
+        items.add(ItemEnergyPile.item);
+        copperNugget = new MyItem("copper_nugget");
+        items.add(copperNugget);
     }
 
     @SubscribeEvent

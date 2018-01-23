@@ -1,8 +1,8 @@
 package com.stdio2016.icehard.proxy;
 
 import com.stdio2016.icehard.IceHardMod;
-import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
+import com.stdio2016.icehard.items.RegisterItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -18,6 +18,9 @@ public class ClientOnly extends CommonProxy {
     public void init(FMLInitializationEvent ev) {
         super.init(ev);
         for (Item i: RegisterBlock.items) {
+            addImageForItem(i);
+        }
+        for (Item i: RegisterItem.items) {
             addImageForItem(i);
         }
     }
