@@ -5,6 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by User on 2018/1/22.
@@ -25,6 +27,10 @@ public class BlockIceHard extends Block {
             // set ice hard abilities here!
             iceHardItem[i] = new ItemBlock(iceHard[i]);
             iceHardItem[i].setRegistryName(name).setUnlocalizedName(name);
+            if (i > 0) {
+                // smelt to make higher level Ice Hard
+                GameRegistry.addSmelting(iceHardItem[i-1], new ItemStack(iceHardItem[i]), 0.1f);
+            }
         }
     }
 

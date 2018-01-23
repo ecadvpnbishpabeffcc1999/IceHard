@@ -1,7 +1,6 @@
 package com.stdio2016.icehard.proxy;
 
 import com.stdio2016.icehard.IceHardMod;
-import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
 import com.stdio2016.icehard.items.RegisterItem;
 import net.minecraft.client.Minecraft;

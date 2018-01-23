@@ -1,7 +1,6 @@
 package com.stdio2016.icehard;
 
 import com.stdio2016.icehard.blocks.BlockIceHard;
-import com.stdio2016.icehard.blocks.RegisterBlock;
 import com.stdio2016.icehard.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
