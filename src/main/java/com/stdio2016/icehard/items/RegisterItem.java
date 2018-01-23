@@ -26,6 +26,7 @@ public class RegisterItem {
         items.add(copper);
         copperNugget = new MyItem("copper_nugget");
         items.add(copperNugget);
+        items.addAll(ItemIceHardSword.items);
     }
 
     public static void init(FMLInitializationEvent event) {
