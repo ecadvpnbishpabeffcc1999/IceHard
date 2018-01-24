@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_sword",
+  "result": {
+    "item": "icehard_sword_light"
+  },
+  "pattern": [
+    "i",
+    "i",
+    "c"
+  ],
+  "key": {
+    "i": {"item": "icehard_light"},
+    "c": {"type": "forge:ore_dict", "ore": "ingotCopper"}
+  }
+}
