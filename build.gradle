@@ -12,8 +12,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 version = "1.0"
-group = "com.stdio2016.strecipemod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "strecipemod"
+group = "com.stdio2016.icehard" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "icehard"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
