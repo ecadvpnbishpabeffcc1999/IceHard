@@ -31,7 +31,6 @@ public class RegisterItem {
 
     public static void init(FMLInitializationEvent event) {
         OreDictionary.registerOre("ingotCopper", copper);
-        OreDictionary.registerOre("nuggetCopper", copperNugget);
         OreDictionary.registerOre("listAllwater", Items.WATER_BUCKET);
     }
 

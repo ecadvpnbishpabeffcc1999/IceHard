@@ -11,6 +11,6 @@
   ],
   "key": {
     "i": {"item": "icehard_blue"},
-    "n": {"type": "forge:ore_dict", "ore": "nuggetCopper"}
+    "n": {"item": "copper_nugget"}
   }
 }

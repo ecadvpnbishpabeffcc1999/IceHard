@@ -41,7 +41,7 @@ public class BlockIceHard extends Block {
         this.setRegistryName(name);
         this.setCreativeTab(IceHardMod.ourTab);
         this.setHardness(5f);
-        this.setHarvestLevel("pickaxe",0);
+        this.setHarvestLevel("pickaxe",1);
         this.setResistance(10.0f);
         this.level = level;
     }
