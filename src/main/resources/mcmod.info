@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "icehard",
+  "name": "Ice Hard Mod",
+  "description": "Add Ice hard ore in Minecraft",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/stdio2016/IceHard",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["stdio2016", "hokomili"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
