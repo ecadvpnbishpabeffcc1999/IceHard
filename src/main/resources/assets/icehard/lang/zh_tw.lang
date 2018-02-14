@@ -5,6 +5,7 @@ tile.icehard_orange.name=橙色冰硬
 tile.icehard_red.name=紅色冰硬
 tile.icehard_purple.name=紫色冰硬
 tile.icehard_light.name=冰硬光
+tile.packed_icehard_blue.name=冰硬磚
 item.energypile.name=能量堆
 item.copper.name=銅
 item.copper_nugget.name=銅粒

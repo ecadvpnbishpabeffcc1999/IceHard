@@ -18,6 +18,8 @@ public class BlockIceHard extends Block {
     };
     public static final BlockIceHard iceHard[] = new BlockIceHard[iceHardNames.length];
     public static final ItemBlock iceHardItem[] = new ItemBlock[iceHardNames.length];
+    public static BlockIceHard packedIceHard;
+    public static ItemBlock packedIceHardItem;
     public final int level;
 
     public static void registerBlocks() {
@@ -32,6 +34,10 @@ public class BlockIceHard extends Block {
                 GameRegistry.addSmelting(iceHardItem[i-1], new ItemStack(iceHardItem[i]), 0.1f);
             }
         }
+        String name = "packed_icehard_blue";
+        packedIceHard = new BlockIceHard(name, 0);
+        packedIceHardItem = new ItemBlock(packedIceHard);
+        packedIceHardItem.setRegistryName(name).setUnlocalizedName(name);
     }
 
     public BlockIceHard(String name, int level) {
@@ -40,7 +46,7 @@ public class BlockIceHard extends Block {
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(IceHardMod.ourTab);
-        this.setHardness(5f);
+        this.setHardness(3f);
         this.setHarvestLevel("pickaxe",1);
         this.setResistance(10.0f);
         this.level = level;

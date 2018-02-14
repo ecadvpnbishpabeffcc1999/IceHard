@@ -23,6 +23,8 @@ public class RegisterBlock {
         BlockIceHard.registerBlocks();
         blocks.addAll(Lists.newArrayList(BlockIceHard.iceHard));
         items.addAll(Lists.newArrayList(BlockIceHard.iceHardItem));
+        blocks.add(BlockIceHard.packedIceHard);
+        items.add(BlockIceHard.packedIceHardItem);
     }
 
     @SubscribeEvent
