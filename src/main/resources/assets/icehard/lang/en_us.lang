@@ -15,4 +15,20 @@ item.icehard_sword_orange.name=Orange Ice Hard Sword
 item.icehard_sword_red.name=Red Ice Hard Sword
 item.icehard_sword_purple.name=Purple Ice Hard Sword
 item.icehard_sword_light.name=Light Ice Hard Sword
+
+item.icehard_pickaxe_blue.name=Blue Ice Hard Pickaxe
+item.icehard_pickaxe_green.name=Greem Ice Hard Pickaxe
+item.icehard_pickaxe_yellow.name=Yellow Ice Hard Pickaxe
+item.icehard_pickaxe_orange.name=Orange Ice Hard Pickaxe
+item.icehard_pickaxe_red.name=Red Ice Hard Pickaxe
+item.icehard_pickaxe_purple.name=Purple Ice Hard Pickaxe
+item.icehard_pickaxe_light.name=Light Ice Hard Pickaxe
+
+item.icehard_axe_blue.name=Blue Ice Hard Axe
+item.icehard_axe_green.name=Greem Ice Hard Axe
+item.icehard_axe_yellow.name=Yellow Ice Hard Axe
+item.icehard_axe_orange.name=Orange Ice Hard Axe
+item.icehard_axe_red.name=Red Ice Hard Axe
+item.icehard_axe_purple.name=Purple Ice Hard Axe
+item.icehard_axe_light.name=Light Ice Hard Axe
 itemGroup.icehard=Ice Hard
