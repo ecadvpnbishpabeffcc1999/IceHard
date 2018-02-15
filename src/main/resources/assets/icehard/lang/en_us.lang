@@ -32,4 +32,12 @@ item.icehard_axe_orange.name=Orange Ice Hard Axe
 item.icehard_axe_red.name=Red Ice Hard Axe
 item.icehard_axe_purple.name=Purple Ice Hard Axe
 item.icehard_axe_light.name=Light Ice Hard Axe
+
+item.broken_tool_blue.name=Blue Ice Hard Copper
+item.broken_tool_green.name=Green Ice Hard Copper
+item.broken_tool_yellow.name=Yellow Ice Hard Copper
+item.broken_tool_orange.name=Orange Ice Hard Copper
+item.broken_tool_red.name=Red Ice Hard Copper
+item.broken_tool_purple.name=Purple Ice Hard Copper
+item.broken_tool_light.name=Light Ice Hard Copper
 itemGroup.icehard=Ice Hard

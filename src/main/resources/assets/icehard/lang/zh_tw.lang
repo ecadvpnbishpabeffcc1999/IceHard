@@ -32,4 +32,12 @@ item.icehard_axe_orange.name=橙之冰硬斧
 item.icehard_axe_red.name=紅之冰硬斧
 item.icehard_axe_purple.name=紫之冰硬斧
 item.icehard_axe_light.name=光之冰硬斧
+
+item.broken_tool_blue.name=藍之冰硬銅
+item.broken_tool_green.name=綠之冰硬銅
+item.broken_tool_yellow.name=黃之冰硬銅
+item.broken_tool_orange.name=橙之冰硬銅
+item.broken_tool_red.name=紅之冰硬銅
+item.broken_tool_purple.name=紫之冰硬銅
+item.broken_tool_light.name=光之冰硬銅
 itemGroup.icehard=冰硬

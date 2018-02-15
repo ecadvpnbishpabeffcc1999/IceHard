@@ -52,7 +52,7 @@ public class ItemIceHardSword extends ItemSword {
 
     @Override
     public boolean onBlockDestroyed(ItemStack itemStack, World world, IBlockState block, BlockPos pos, EntityLivingBase entity) {
-        if(block.getBlockHardness(world, pos) != 0.0f) {
+        if(!world.isRemote && block.getBlockHardness(world, pos) != 0.0f) {
             itemStack.damageItem(2, entity);
             if (itemStack.getItemDamage() == 0) {
                 this.onToolDestroyed(itemStack, world, entity);

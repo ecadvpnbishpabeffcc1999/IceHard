@@ -66,12 +66,12 @@ public class RegisterItem {
         * axe damage = 7 or 9
         * */
         //  lv,  max uses,  damage
-        toolSettings[0] = addToolSetting(0, 132, 2);
-        toolSettings[1] = addToolSetting(1, 251, 3);
-        toolSettings[2] = addToolSetting(2, 370, 4);
-        toolSettings[3] = addToolSetting(3, 489, 5);
-        toolSettings[4] = addToolSetting(4, 608, 6);
-        toolSettings[5] = addToolSetting(5, 727, 7);
-        toolSettings[6] = addToolSetting(6, 846, 9);
+        toolSettings[0] = addToolSetting(0, 33, 2);
+        toolSettings[1] = addToolSetting(1, 65, 3);
+        toolSettings[2] = addToolSetting(2, 129, 4);
+        toolSettings[3] = addToolSetting(3, 257, 5);
+        toolSettings[4] = addToolSetting(4, 385, 6);
+        toolSettings[5] = addToolSetting(5, 513, 7);
+        toolSettings[6] = addToolSetting(6, 1023, 9);
     }
 }

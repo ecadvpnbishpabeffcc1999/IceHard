@@ -1,0 +1,6 @@
+{
+  "parent":"minecraft:item/coal",
+  "textures": {
+    "layer0": "icehard:items/broken_tool_yellow"
+  }
+}
