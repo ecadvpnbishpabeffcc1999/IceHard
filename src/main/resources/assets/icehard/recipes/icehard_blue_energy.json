@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "result": {
     "item": "energypile",
-    "count": 8
+    "count": 32
   },
   "pattern": [
     "iii",
@@ -10,7 +10,7 @@
     "iii"
   ],
   "key": {
-    "i": {"item": "icehard_blue"},
+    "i": {"item": "packed_icehard_blue"},
     "n": {"item": "copper_nugget"}
   }
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/masspile",
+    "down": "icehard:blocks/masspile",
+    "north": "icehard:blocks/masspile",
+    "south": "icehard:blocks/masspile",
+    "west": "icehard:blocks/masspile",
+    "east": "icehard:blocks/masspile",
+    "particle": "icehard:blocks/masspile"
+  }
+}

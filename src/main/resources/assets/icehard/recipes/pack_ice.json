@@ -5,9 +5,8 @@
     "count": 1
   },
   "pattern": [
-    "iii",
-    "iii",
-    "iii"
+    "ii",
+    "ii"
   ],
   "key": {
     "i": {"item": "minecraft:ice"}

@@ -2,6 +2,9 @@ package com.stdio2016.icehard.blocks;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -18,13 +21,23 @@ import java.util.List;
 public class RegisterBlock {
     public static List<Block> blocks = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
+    public static MyBlock massPile;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
         blocks.addAll(Lists.newArrayList(BlockIceHard.iceHard));
         items.addAll(Lists.newArrayList(BlockIceHard.iceHardItem));
-        blocks.add(BlockIceHard.packedIceHard);
-        items.add(BlockIceHard.packedIceHardItem);
+        helpAddBlock(BlockIceHard.packedIceHard);
+
+        massPile = new MyBlock("masspile", Material.ROCK, MapColor.BLUE);
+        massPile.setSound(SoundType.GLASS).setHardness(5f).setResistance(16.0f);
+        massPile.setHarvestLevel("pickaxe", 1);
+        helpAddBlock(massPile);
+    }
+
+    public static void helpAddBlock(MyBlock block) {
+        blocks.add(block);
+        items.add(block.item);
     }
 
     @SubscribeEvent

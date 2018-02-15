@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "result": {
-    "item": "icehard_blue",
+    "item": "minecraft:ice",
     "count": 4
   },
   "pattern": [
     "i"
   ],
   "key": {
-    "i": {"item": "packed_icehard_blue"}
+    "i": {"item": "minecraft:packed_ice"}
   }
 }
