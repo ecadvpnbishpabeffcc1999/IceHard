@@ -19,7 +19,7 @@ import java.util.List;
  */
 
 public class RegisterItem {
-    public static MyItem copperNugget, copper;
+    public static MyItem copperNugget, copper, frost;
     public static List<Item> items = new ArrayList<>();
     public static final Item.ToolMaterial[] toolSettings = new Item.ToolMaterial[BlockIceHard.MaxLevel];
     public static MyItem[] brokenTool = new MyItem[BlockIceHard.MaxLevel];
@@ -37,6 +37,8 @@ public class RegisterItem {
             brokenTool[i] = new MyItem("broken_tool_" + BlockIceHard.iceHardNames[i]);
             items.add(brokenTool[i]);
         }
+        frost = new MyItem("frost");
+        items.add(frost);
     }
 
     public static void init(FMLInitializationEvent event) {

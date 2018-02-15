@@ -41,4 +41,6 @@ item.broken_tool_orange.name=Orange Ice Hard Copper
 item.broken_tool_red.name=Red Ice Hard Copper
 item.broken_tool_purple.name=Purple Ice Hard Copper
 item.broken_tool_light.name=Light Ice Hard Copper
+
+item.frost.name=Frost
 itemGroup.icehard=Ice Hard

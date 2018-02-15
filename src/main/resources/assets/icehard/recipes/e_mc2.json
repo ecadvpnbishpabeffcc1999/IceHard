@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "masspile",
+    "count": 8
+  },
+  "pattern": [
+    "fff",
+    "fpf",
+    "fff"
+  ],
+  "key": {
+    "f": {"item": "frost"},
+    "p": {"item": "packed_icehard_blue"}
+  }
+}

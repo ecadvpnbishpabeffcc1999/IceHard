@@ -41,4 +41,6 @@ item.broken_tool_orange.name=橙之冰硬銅
 item.broken_tool_red.name=紅之冰硬銅
 item.broken_tool_purple.name=紫之冰硬銅
 item.broken_tool_light.name=光之冰硬銅
+
+item.frost.name=霜
 itemGroup.icehard=冰硬
