@@ -16,8 +16,9 @@ public class BlockIceHard extends Block {
             "blue", "green", "yellow", "orange",
             "red", "purple", "light"
     };
-    public static final BlockIceHard iceHard[] = new BlockIceHard[iceHardNames.length];
-    public static final ItemBlock iceHardItem[] = new ItemBlock[iceHardNames.length];
+    public static final int MaxLevel = iceHardNames.length;
+    public static final BlockIceHard iceHard[] = new BlockIceHard[MaxLevel];
+    public static final ItemBlock iceHardItem[] = new ItemBlock[MaxLevel];
     public static BlockIceHard packedIceHard;
     public static ItemBlock packedIceHardItem;
     public final int level;
