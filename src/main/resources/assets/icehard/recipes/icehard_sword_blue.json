@@ -7,10 +7,10 @@
   "pattern": [
     "i",
     "i",
-    "c"
+    "e"
   ],
   "key": {
     "i": {"item": "icehard_blue"},
-    "c": {"type": "forge:ore_dict", "ore": "ingotCopper"}
+    "e": {"item": "energypile"}
   }
 }

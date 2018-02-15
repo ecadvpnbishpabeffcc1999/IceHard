@@ -29,7 +29,7 @@ public class RegisterBlock {
         items.addAll(Lists.newArrayList(BlockIceHard.iceHardItem));
         helpAddBlock(BlockIceHard.packedIceHard);
 
-        massPile = new MyBlock("masspile", Material.ROCK, MapColor.BLUE);
+        massPile = new MyBlock("masspile", Material.ROCK, MapColor.LIGHT_BLUE);
         massPile.setSound(SoundType.GLASS).setHardness(5f).setResistance(16.0f);
         massPile.setHarvestLevel("pickaxe", 1);
         helpAddBlock(massPile);

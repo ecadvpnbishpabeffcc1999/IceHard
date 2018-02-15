@@ -44,6 +44,12 @@ public class RegisterItem {
     public static void init(FMLInitializationEvent event) {
         OreDictionary.registerOre("ingotCopper", copper);
         OreDictionary.registerOre("listAllwater", Items.WATER_BUCKET);
+        for (int i = 1; i < BlockIceHard.MaxLevel; i++) {
+            String lv = "icehard_copper_lv" + i + "_up";
+            for (int j = i-1; j < BlockIceHard.MaxLevel; j++) {
+                OreDictionary.registerOre(lv, brokenTool[j]);
+            }
+        }
     }
 
     @SubscribeEvent

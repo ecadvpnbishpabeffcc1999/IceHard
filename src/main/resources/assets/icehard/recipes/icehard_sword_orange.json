@@ -11,6 +11,6 @@
   ],
   "key": {
     "i": {"item": "icehard_orange"},
-    "c": {"type": "forge:ore_dict", "ore": "ingotCopper"}
+    "c": {"type": "forge:ore_dict", "ore": "icehard_copper_lv3_up"}
   }
 }
