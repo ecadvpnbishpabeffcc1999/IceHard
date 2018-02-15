@@ -63,15 +63,15 @@ public class RegisterItem {
         * pickaxe damage +0
         * shovel damage +0.5
         * sword damage +2
-        * axe damage = 7 or 9
+        * axe damage defined in ItemIceHardAxe
         * */
         //  lv,  max uses,  damage
-        toolSettings[0] = addToolSetting(0, 33, 2);
-        toolSettings[1] = addToolSetting(1, 65, 3);
-        toolSettings[2] = addToolSetting(2, 129, 4);
-        toolSettings[3] = addToolSetting(3, 257, 5);
-        toolSettings[4] = addToolSetting(4, 385, 6);
-        toolSettings[5] = addToolSetting(5, 513, 7);
-        toolSettings[6] = addToolSetting(6, 1023, 9);
+        toolSettings[0] = addToolSetting(0, 130, 2);
+        toolSettings[1] = addToolSetting(1, 180, 3);
+        toolSettings[2] = addToolSetting(2, 250, 4);
+        toolSettings[3] = addToolSetting(3, 340, 5);
+        toolSettings[4] = addToolSetting(4, 450, 6);
+        toolSettings[5] = addToolSetting(5, 580, 7);
+        toolSettings[6] = addToolSetting(6, 730, 9);
     }
 }
