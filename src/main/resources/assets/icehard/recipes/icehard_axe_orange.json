@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_axe",
+  "result": {
+    "item": "icehard_axe_orange"
+  },
+  "pattern": [
+    "ii",
+    "ic",
+    " m"
+  ],
+  "key": {
+    "i": {"item": "icehard_orange"},
+    "c": {"type": "forge:ore_dict", "ore": "icehard_copper_lv3_up"},
+    "m": {"item": "masspile"}
+  }
+}

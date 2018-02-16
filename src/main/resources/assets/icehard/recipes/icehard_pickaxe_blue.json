@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_pickaxe",
+  "result": {
+    "item": "icehard_pickaxe_blue"
+  },
+  "pattern": [
+    "iii",
+    " m ",
+    " m "
+  ],
+  "key": {
+    "i": {"item": "icehard_blue"},
+    "m": {"item": "masspile"}
+  }
+}

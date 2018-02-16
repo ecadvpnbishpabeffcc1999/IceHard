@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_pickaxe",
+  "result": {
+    "item": "icehard_pickaxe_light"
+  },
+  "pattern": [
+    "iii",
+    " c ",
+    " m "
+  ],
+  "key": {
+    "i": {"item": "icehard_light"},
+    "c": {"type": "forge:ore_dict", "ore": "icehard_copper_lv6_up"},
+    "m": {"item": "masspile"}
+  }
+}
