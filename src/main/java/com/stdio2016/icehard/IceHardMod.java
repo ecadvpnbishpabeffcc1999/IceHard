@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class IceHardMod
 {
     public static final String MODID = "icehard";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "2.0";
     public static final String ClientOnlyClass = "com.stdio2016.icehard.proxy.ClientOnly";
     public static final String ServerOnlyClass = "com.stdio2016.icehard.proxy.ServerOnly";
 
