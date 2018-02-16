@@ -33,6 +33,7 @@ public class RegisterItem {
         items.addAll(ItemIceHardSword.items);
         items.addAll(ItemIceHardPickaxe.items);
         items.addAll(ItemIceHardAxe.items);
+        items.addAll(ItemIceHardShovel.items);
         for (int i = 0; i < BlockIceHard.MaxLevel; i++) {
             brokenTool[i] = new MyItem("broken_tool_" + BlockIceHard.iceHardNames[i]);
             items.add(brokenTool[i]);

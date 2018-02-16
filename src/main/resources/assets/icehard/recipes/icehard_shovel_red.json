@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_shovel",
+  "result": {
+    "item": "icehard_shovel_red"
+  },
+  "pattern": [
+    "i",
+    "c",
+    "m"
+  ],
+  "key": {
+    "i": {"item": "icehard_red"},
+    "c": {"type": "forge:ore_dict", "ore": "icehard_copper_lv4_up"},
+    "m": {"item": "masspile"}
+  }
+}

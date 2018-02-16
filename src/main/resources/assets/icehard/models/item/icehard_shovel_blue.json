@@ -1,0 +1,6 @@
+{
+  "parent":"minecraft:item/iron_shovel",
+  "textures": {
+    "layer0": "icehard:tools/icehard_shovel_blue"
+  }
+}

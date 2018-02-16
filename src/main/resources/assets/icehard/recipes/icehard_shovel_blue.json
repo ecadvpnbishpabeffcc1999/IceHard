@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "icehard_shovel",
+  "result": {
+    "item": "icehard_shovel_blue"
+  },
+  "pattern": [
+    "i",
+    "m",
+    "m"
+  ],
+  "key": {
+    "i": {"item": "icehard_blue"},
+    "m": {"item": "masspile"}
+  }
+}

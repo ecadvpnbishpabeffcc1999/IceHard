@@ -34,6 +34,14 @@ item.icehard_axe_red.name=紅之冰硬斧
 item.icehard_axe_purple.name=紫之冰硬斧
 item.icehard_axe_light.name=光之冰硬斧
 
+item.icehard_shovel_blue.name=藍之冰硬鏟
+item.icehard_shovel_green.name=綠之冰硬鏟
+item.icehard_shovel_yellow.name=黃之冰硬鏟
+item.icehard_shovel_orange.name=橙之冰硬鏟
+item.icehard_shovel_red.name=紅之冰硬鏟
+item.icehard_shovel_purple.name=紫之冰硬鏟
+item.icehard_shovel_light.name=光之冰硬鏟
+
 item.broken_tool_blue.name=藍之冰硬銅
 item.broken_tool_green.name=綠之冰硬銅
 item.broken_tool_yellow.name=黃之冰硬銅
