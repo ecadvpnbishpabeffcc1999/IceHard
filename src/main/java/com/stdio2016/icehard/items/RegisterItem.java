@@ -23,6 +23,7 @@ public class RegisterItem {
     public static List<Item> items = new ArrayList<>();
     public static final Item.ToolMaterial[] toolSettings = new Item.ToolMaterial[BlockIceHard.MaxLevel];
     public static MyItem[] brokenTool = new MyItem[BlockIceHard.MaxLevel];
+    public static MyItem icircuit, iceHeart, energyConvert, massConvert;
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
@@ -41,6 +42,15 @@ public class RegisterItem {
         }
         frost = new MyItem("frost");
         items.add(frost);
+
+        icircuit = new MyItem("icircuit");
+        iceHeart = new MyItem("iceheart");
+        energyConvert = new MyItem("energy_convert");
+        massConvert = new MyItem("mass_convert");
+        items.add(icircuit);
+        items.add(iceHeart);
+        items.add(energyConvert);
+        items.add(massConvert);
     }
 
     public static void init(FMLInitializationEvent event) {

@@ -59,4 +59,8 @@ item.broken_tool_purple.name=Purple Ice Hard Copper
 item.broken_tool_light.name=Light Ice Hard Copper
 
 item.frost.name=Frost
+item.icircuit.name=Icircuit
+item.iceheart.name=Ice Heart
+item.energy_convert.name=Energy Converter
+item.mass_convert.name=Mass Converter
 itemGroup.icehard=Ice Hard

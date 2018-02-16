@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "energy_convert",
+    "count": 1
+  },
+  "pattern": [
+    " c ",
+    "EME",
+    " h "
+  ],
+  "key": {
+    "c": {"item": "icircuit"},
+    "E": {"item": "energypile"},
+    "M": {"item": "masspile"},
+    "h": {"item": "iceheart"}
+  }
+}

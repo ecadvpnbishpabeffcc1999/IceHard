@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "icircuit",
+    "count": 1
+  },
+  "pattern": [
+    "CII",
+    "CCC",
+    "IIC"
+  ],
+  "key": {
+    "I": {"item": "icehard_blue"},
+    "C": {"item": "copper_nugget"}
+  }
+}

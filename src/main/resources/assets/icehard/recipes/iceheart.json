@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "iceheart",
+    "count": 1
+  },
+  "pattern": [
+    "MEM",
+    "EIE",
+    "MEM"
+  ],
+  "key": {
+    "M": {"item": "masspile"},
+    "E": {"item": "energypile"},
+    "I": {"item": "icircuit"}
+  }
+}

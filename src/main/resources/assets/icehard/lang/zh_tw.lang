@@ -59,4 +59,8 @@ item.broken_tool_purple.name=紫之冰硬銅
 item.broken_tool_light.name=光之冰硬銅
 
 item.frost.name=霜
+item.icircuit.name=冰硬電路
+item.iceheart.name=冰心
+item.energy_convert.name=能量轉換器
+item.mass_convert.name=質量轉換器
 itemGroup.icehard=冰硬
