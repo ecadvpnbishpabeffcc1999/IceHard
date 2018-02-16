@@ -42,6 +42,14 @@ item.icehard_shovel_red.name=Red Ice Hard Shovel
 item.icehard_shovel_purple.name=Purple Ice Hard Shovel
 item.icehard_shovel_light.name=Light Ice Hard Shovel
 
+item.icehard_hoe_blue.name=Blue Ice Hard Hoe
+item.icehard_hoe_green.name=Greem Ice Hard Hoe
+item.icehard_hoe_yellow.name=Yellow Ice Hard Hoe
+item.icehard_hoe_orange.name=Orange Ice Hard Hoe
+item.icehard_hoe_red.name=Red Ice Hard Hoe
+item.icehard_hoe_purple.name=Purple Ice Hard Hoe
+item.icehard_hoe_light.name=Light Ice Hard Hoe
+
 item.broken_tool_blue.name=Blue Ice Hard Copper
 item.broken_tool_green.name=Green Ice Hard Copper
 item.broken_tool_yellow.name=Yellow Ice Hard Copper

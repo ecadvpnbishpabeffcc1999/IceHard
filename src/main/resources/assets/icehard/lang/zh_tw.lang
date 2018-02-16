@@ -42,6 +42,14 @@ item.icehard_shovel_red.name=紅之冰硬鏟
 item.icehard_shovel_purple.name=紫之冰硬鏟
 item.icehard_shovel_light.name=光之冰硬鏟
 
+item.icehard_hoe_blue.name=藍之冰硬鋤
+item.icehard_hoe_green.name=綠之冰硬鋤
+item.icehard_hoe_yellow.name=黃之冰硬鋤
+item.icehard_hoe_orange.name=橙之冰硬鋤
+item.icehard_hoe_red.name=紅之冰硬鋤
+item.icehard_hoe_purple.name=紫之冰硬鋤
+item.icehard_hoe_light.name=光之冰硬鋤
+
 item.broken_tool_blue.name=藍之冰硬銅
 item.broken_tool_green.name=綠之冰硬銅
 item.broken_tool_yellow.name=黃之冰硬銅

@@ -2,11 +2,10 @@ package com.stdio2016.icehard.items;
 
 import com.stdio2016.icehard.IceHardMod;
 import com.stdio2016.icehard.blocks.BlockIceHard;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -21,11 +20,11 @@ import java.util.List;
 /**
  * Created by User on 2018/1/23.
  */
-public class ItemIceHardShovel extends ItemSpade {
-    public static List<ItemIceHardShovel> items;
+public class ItemIceHardHoe extends ItemHoe {
+    public static List<ItemIceHardHoe> items;
     int lv;
 
-    public ItemIceHardShovel(String name, ToolMaterial mat, int lv) {
+    public ItemIceHardHoe(String name, ToolMaterial mat, int lv) {
         super(mat);
         this.setRegistryName(name).setUnlocalizedName(name);
         this.setCreativeTab(IceHardMod.ourTab);
@@ -35,7 +34,7 @@ public class ItemIceHardShovel extends ItemSpade {
     static {
         items = new ArrayList<>();
         for (int i = 0; i < RegisterItem.toolSettings.length; i++) {
-            ItemIceHardShovel s = new ItemIceHardShovel("icehard_shovel_"+BlockIceHard.iceHardNames[i], RegisterItem.toolSettings[i], i);
+            ItemIceHardHoe s = new ItemIceHardHoe("icehard_hoe_"+BlockIceHard.iceHardNames[i], RegisterItem.toolSettings[i], i);
             items.add(s);
             GameRegistry.addSmelting(s, new ItemStack(s), 0.0f);
         }
@@ -54,19 +53,8 @@ public class ItemIceHardShovel extends ItemSpade {
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack itemStack, World world, IBlockState block, BlockPos pos, EntityLivingBase entity) {
-        if(!world.isRemote && block.getBlockHardness(world, pos) != 0.0f) {
-            itemStack.damageItem(1, entity);
-            if (itemStack.getItemDamage() == 0) {
-                this.throwBrokenTool(itemStack, world, entity);
-            }
-        }
-        return true;
-    }
-
-    @Override
     public boolean hitEntity(ItemStack itemStack, EntityLivingBase entity, EntityLivingBase attacker) {
-        itemStack.damageItem(2, attacker);
+        itemStack.damageItem(1, attacker);
         if (itemStack.getItemDamage() == 0) {
             this.throwBrokenTool(itemStack, attacker.world, attacker);
         }
