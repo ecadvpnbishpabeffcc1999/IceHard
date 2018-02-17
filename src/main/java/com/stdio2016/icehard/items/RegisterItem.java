@@ -45,7 +45,7 @@ public class RegisterItem {
 
         icircuit = new MyItem("icircuit");
         iceHeart = new MyItem("iceheart");
-        energyConvert = new MyItem("energy_convert");
+        energyConvert = new ItemEnergyConvert("energy_convert");
         massConvert = new MyItem("mass_convert");
         items.add(icircuit);
         items.add(iceHeart);

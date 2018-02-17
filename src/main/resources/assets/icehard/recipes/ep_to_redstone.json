@@ -4,6 +4,7 @@
     "item": "minecraft:redstone"
   },
   "ingredients": [
-    {"item": "energypile"}
+    {"item": "energypile"},
+    {"item": "energy_convert"}
   ]
 }
