@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:magma"
+  },
+  "ingredients": [
+    {"item": "minecraft:redstone"},
+    {"item": "minecraft:redstone"},
+    {"item": "minecraft:redstone"},
+    {"item": "minecraft:redstone"},
+    {"item": "minecraft:redstone"},
+    {"item": "energy_convert"}
+  ]
+}

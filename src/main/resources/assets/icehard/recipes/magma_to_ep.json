@@ -1,11 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "result": {
-    "item": "minecraft:redstone"
+    "item": "energypile",
+    "count": 10
   },
   "ingredients": [
-    {"item": "energypile"},
-    {"item": "energypile"},
+    {"item": "minecraft:magma"},
     {"item": "energy_convert"}
   ]
 }
