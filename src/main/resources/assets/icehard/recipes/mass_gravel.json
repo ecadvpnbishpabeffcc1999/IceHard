@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:gravel",
+    "count": 1
+  },
+  "ingredients": [
+    {"item": "minecraft:cobblestone"},
+    {"item": "mass_convert"}
+  ]
+}

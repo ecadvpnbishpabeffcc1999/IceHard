@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:clay",
+    "count": 1
+  },
+  "ingredients": [
+    {"item": "minecraft:dirt", "data": 32767},
+    {"item": "mass_convert"}
+  ]
+}

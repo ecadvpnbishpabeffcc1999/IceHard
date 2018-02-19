@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:snow",
+    "count": 2
+  },
+  "ingredients": [
+    {"item": "minecraft:clay"},
+    {"item": "mass_convert"}
+  ]
+}

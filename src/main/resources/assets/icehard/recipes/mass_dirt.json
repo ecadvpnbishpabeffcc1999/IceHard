@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:dirt",
+    "data": 0,
+    "count": 1
+  },
+  "ingredients": [
+    {"item": "minecraft:sand", "data": 32767},
+    {"item": "mass_convert"}
+  ]
+}
