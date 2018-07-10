@@ -11,15 +11,21 @@ import net.minecraft.item.ItemBlock;
  * Created by User on 2018/2/15.
  */
 public class MyBlock extends Block {
-    public final ItemBlock item;
+    public ItemBlock item;
 
     public MyBlock(String name, Material mat, MapColor mapColor) {
+        this(name, mat, mapColor, true);
+    }
+
+    protected MyBlock(String name, Material mat, MapColor mapColor, boolean register) {
         super(mat, mapColor);
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(IceHardMod.ourTab);
-        this.item = new ItemBlock(this);
-        this.item.setRegistryName(name).setUnlocalizedName(name);
+        if (register) {
+            this.item = new ItemBlock(this);
+            this.item.setRegistryName(name).setUnlocalizedName(name);
+        }
     }
 
     public MyBlock setSound(SoundType s) {

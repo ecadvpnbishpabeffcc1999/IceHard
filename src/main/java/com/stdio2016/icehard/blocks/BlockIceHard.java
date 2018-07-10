@@ -1,11 +1,19 @@
 package com.stdio2016.icehard.blocks;
 
+import com.stdio2016.icehard.items.ItemIceHardBlock;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.Random;
 
 /**
  * Created by User on 2018/1/22.
@@ -43,11 +51,46 @@ public class BlockIceHard extends MyBlock {
     }
 
     public BlockIceHard(String name, int level) {
-        super(name, Material.ROCK, mapColors[level]);
+        super(name, Material.ROCK, mapColors[level], false);
         this.setSoundType(SoundType.GLASS);
         this.setHardness(3f);
         this.setHarvestLevel("pickaxe",1);
         this.setResistance(10.0f);
         this.level = level;
+        this.setTickRandomly(true);
+        this.item = new ItemIceHardBlock(this);
+        this.item.setRegistryName(name).setUnlocalizedName(name);
+    }
+
+    @Override
+    public void updateTick(World world, BlockPos pos, IBlockState state, Random rnd) {
+        for (int x = -2; x <= 2; x++) {
+            for (int y = -2; y <= 1; y++) {
+                for (int z = -2; z <= 2; z++) {
+                    if (rnd.nextInt(2) == 0) {
+                        updateTicks_test(world, pos, x, y, z, state);
+                    }
+                }
+            }
+        }
+    }
+
+    private void updateTicks_test(World world, BlockPos pos, int x, int y, int z,
+                                  IBlockState state) {
+        pos = new BlockPos(pos.getX()+x,pos.getY()+y,pos.getZ()+z);
+        IBlockState blk = world.getBlockState(pos);
+        if (blk.getBlock() == Blocks.LAVA) {
+            if (blk.getValue(BlockLiquid.LEVEL) == 0) {
+                world.setBlockState(pos, Blocks.OBSIDIAN.getDefaultState());
+            }
+            else if ((blk.getValue(BlockLiquid.LEVEL) & 7) < 4) {
+                world.setBlockState(pos, Blocks.STONE.getDefaultState());
+            }
+        }
+        else if (blk.getBlock() == Blocks.WATER) {
+            if ((blk.getValue(BlockLiquid.LEVEL) & 7) == 0) {
+                world.setBlockState(pos, Blocks.ICE.getDefaultState());
+            }
+        }
     }
 }
