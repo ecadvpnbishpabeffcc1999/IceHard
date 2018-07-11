@@ -54,7 +54,7 @@ public class ItemIceHardPickaxe extends ItemPickaxe {
     public boolean onBlockDestroyed(ItemStack itemStack, World world, IBlockState block, BlockPos pos, EntityLivingBase entity) {
         if(!world.isRemote && block.getBlockHardness(world, pos) != 0.0f) {
             itemStack.damageItem(1, entity);
-            if (itemStack.getItemDamage() == 0) {
+            if (itemStack.getCount() == 0) {
                 this.onToolDestroyed(itemStack, world, entity);
             }
         }
@@ -64,7 +64,7 @@ public class ItemIceHardPickaxe extends ItemPickaxe {
     @Override
     public boolean hitEntity(ItemStack itemStack, EntityLivingBase entity, EntityLivingBase attacker) {
         itemStack.damageItem(2, attacker);
-        if (itemStack.getItemDamage() == 0) {
+        if (itemStack.getCount() == 0) {
             this.onToolDestroyed(itemStack, attacker.world, attacker);
         }
         return true;

@@ -55,7 +55,7 @@ public class ItemIceHardHoe extends ItemHoe {
     @Override
     public boolean hitEntity(ItemStack itemStack, EntityLivingBase entity, EntityLivingBase attacker) {
         itemStack.damageItem(1, attacker);
-        if (itemStack.getItemDamage() == 0) {
+        if (itemStack.getCount() == 0) {
             this.throwBrokenTool(itemStack, attacker.world, attacker);
         }
         return true;
