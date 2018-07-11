@@ -74,7 +74,7 @@ public class RegisterItem {
 
     public static Item.ToolMaterial addToolSetting(int lv, int maxUses, int damage) {
         return EnumHelper.addToolMaterial("ICEHARD_" + BlockIceHard.iceHardNames[lv].toUpperCase(),
-                3, maxUses - 1, lv * 2 + 4, damage - 2, lv * 2 + 5);
+                3, maxUses - 1, lv * 2 + 4, damage - 2, 15);
     }
 
     static {
