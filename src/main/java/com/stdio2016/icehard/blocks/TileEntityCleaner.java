@@ -2,6 +2,7 @@ package com.stdio2016.icehard.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -27,7 +28,8 @@ public class TileEntityCleaner extends TileEntity {
             return ;
         }
         if (blockToRemove == null) {
-            blockToRemove = world.getBlockState(pos.add(0,-1,0)).getBlock();
+            Block blk = world.getBlockState(pos.add(0,-1,0)).getBlock();
+            blockToRemove = getEquivalentBlock(blk);
         }
         else {
             int x = pos.getX();
@@ -47,7 +49,7 @@ public class TileEntityCleaner extends TileEntity {
 
     private void clear(World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
-        if (world.getBlockState(pos).getBlock() == blockToRemove) {
+        if (getEquivalentBlock(world.getBlockState(pos).getBlock()) == blockToRemove) {
             world.setBlockState(pos, RegisterBlock.some.getDefaultState());
             TileEntityCleaner te = new TileEntityCleaner();
             te.blockToRemove = blockToRemove;
@@ -55,6 +57,19 @@ public class TileEntityCleaner extends TileEntity {
             world.setTileEntity(pos, te);
             world.scheduleUpdate(pos, RegisterBlock.some,10);
         }
+    }
+
+    private Block getEquivalentBlock(Block a) {
+        if (a == Blocks.FLOWING_LAVA) {
+            return Blocks.LAVA;
+        }
+        if (a == Blocks.FLOWING_WATER) {
+            return Blocks.WATER;
+        }
+        if (a == Blocks.GRASS_PATH || a == Blocks.GRASS || a == Blocks.MYCELIUM) {
+            return Blocks.DIRT;
+        }
+        return a;
     }
 
     @Override
