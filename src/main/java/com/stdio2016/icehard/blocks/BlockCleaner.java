@@ -43,25 +43,25 @@ public class BlockCleaner extends MyBlock implements ITileEntityProvider {
         }
     }
 
-    @Override
+    /*@Override
     public void neighborChanged(IBlockState b, World world, BlockPos pos, Block b2, BlockPos pos2) {
         if (!world.isRemote) {
             if (world.isBlockPowered(pos)) {
                 world.scheduleUpdate(pos, this, 10);
             }
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
         if (!world.isRemote) {
             final TileEntity te = world.getTileEntity(pos);
             if (te != null && te instanceof TileEntityCleaner) {
                 final TileEntityCleaner cleaner = (TileEntityCleaner) te;
-                cleaner.clean(world, pos);
+                //cleaner.clean(world, pos);
             }
         }
-    }
+    }*/
 
     @Override
     public TileEntity createNewTileEntity(World world, int meta)
