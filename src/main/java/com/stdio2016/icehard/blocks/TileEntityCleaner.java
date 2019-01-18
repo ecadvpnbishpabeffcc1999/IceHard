@@ -1,18 +1,24 @@
 package com.stdio2016.icehard.blocks;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateBase;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Random;
 
 /**
  * Created by User on 2018/8/7.
@@ -21,11 +27,17 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
     public ArrayList<IBlockState> blocksToRemove;
     public int range;
     public int delay;
+    public int power;
+    public BlockPos center;
+    public int id;
 
     public TileEntityCleaner() {
         blocksToRemove = null;
         range = 20;
         delay = 0;
+        power = range * range / 3;
+        center = new BlockPos(0,0,0);
+        id = 0;
     }
 
     @Override
@@ -44,17 +56,19 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
         if (blocksToRemove == null || blocksToRemove.size() == 0) {
             if (world.isBlockIndirectlyGettingPowered(pos) <= 0) return;
             blocksToRemove = new ArrayList<>();
-            BlockPos p = pos.add(0, 1, 0);
-            while (p.getY() <= 255) {
+            center = pos;
+            id = new Random().nextInt();
+            BlockPos p = pos.up();
+            while (true) {
                 IBlockState blk = getEquivalentBlock(world.getBlockState(p));
                 if (blk == null) break;
                 blocksToRemove.add(blk);
-                p = p.add(0, 1, 0);
+                p = p.up();
             }
         }
         else {
             delay++;
-            if (delay < 40) return;
+            if (delay < 25) return;
             delay = 0;
             clear(world, pos.north());
             clear(world, pos.south());
@@ -69,37 +83,51 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
     }
 
     private void clear(World world, BlockPos pos) {
+        double d = pos.distanceSq(center);
+        if (d > power) return;
         IBlockState b = getEquivalentBlock(world.getBlockState(pos));
         if (blocksToRemove.contains(b)) {
             world.setBlockState(pos, RegisterBlock.some.getDefaultState());
             TileEntityCleaner te = new TileEntityCleaner();
             te.blocksToRemove = blocksToRemove;
             te.range = range - 1;
+            te.power = power;
+            te.center = center;
             world.setTileEntity(pos, te);
             world.scheduleUpdate(pos, RegisterBlock.some,10);
         }
     }
 
     private IBlockState getEquivalentBlock(IBlockState a) {
-        if (a == Blocks.FLOWING_LAVA.getDefaultState()) {
+        Block b = a.getBlock();
+        if (b == Blocks.LAVA || b == Blocks.FLOWING_LAVA) {
             return Blocks.LAVA.getDefaultState();
         }
-        if (a == Blocks.FLOWING_WATER.getDefaultState()) {
+        if (b == Blocks.WATER || b == Blocks.FLOWING_WATER) {
             return Blocks.WATER.getDefaultState();
         }
-        if (a == Blocks.GRASS_PATH.getDefaultState() || a == Blocks.GRASS.getDefaultState() || a == Blocks.MYCELIUM.getDefaultState()) {
+        if (b == Blocks.GRASS_PATH || b == Blocks.GRASS || b == Blocks.MYCELIUM) {
             return Blocks.DIRT.getDefaultState();
         }
-        if (a == Blocks.AIR.getDefaultState()) {
+        if (b == Blocks.AIR) {
             return null;
         }
-        return a;
+        Collection<IProperty<?>> col = a.getPropertyKeys();
+        int meta = b.damageDropped(a);
+        return b.getStateFromMeta(meta);
     }
 
     @Override
     public void readFromNBT(NBTTagCompound p_deserializeNBT_1_) {
         super.readFromNBT(p_deserializeNBT_1_);
         range = getTileData().getInteger("range");
+        power = getTileData().getInteger("power");
+        center = new BlockPos(
+            getTileData().getInteger("centerX"),
+            getTileData().getInteger("centerY"),
+            getTileData().getInteger("centerZ")
+        );
+        id = getTileData().getInteger("id");
         NBTTagList list = getTileData().getTagList("blocks", Constants.NBT.TAG_COMPOUND);
         blocksToRemove = new ArrayList<>();
         if (list.tagCount() > 0) {
@@ -125,6 +153,11 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
             getTileData().setTag("blocks", list);
         }
         getTileData().setInteger("range", range);
+        getTileData().setInteger("power", power);
+        getTileData().setInteger("centerX", center.getX());
+        getTileData().setInteger("centerY", center.getY());
+        getTileData().setInteger("centerZ", center.getZ());
+        getTileData().setInteger("id", id);
         return super.writeToNBT(nbt);
     }
 }
