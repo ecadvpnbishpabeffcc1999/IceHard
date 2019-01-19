@@ -3,10 +3,12 @@ package com.stdio2016.icehard.items;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemBlock;
 import com.stdio2016.icehard.blocks.BlockIceHard;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -57,6 +59,7 @@ public class ItemIceHardBlock extends ItemBlock {
     public ItemStack onItemUseFinish(ItemStack stack, World world, EntityLivingBase entity) {
         if(entity instanceof EntityPlayerMP) {
             entity.extinguish();
+            entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 5 * 20));
             stack.shrink(1);
         }
         return stack;
