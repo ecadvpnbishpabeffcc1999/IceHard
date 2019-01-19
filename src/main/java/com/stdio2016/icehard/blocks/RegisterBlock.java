@@ -37,17 +37,17 @@ public class RegisterBlock {
         massPile.setHarvestLevel("pickaxe", 1);
         helpAddBlock(massPile);
 
-        cleaner = new BlockCleaner("cleaner", Material.GRASS, MapColor.GRASS);
+        cleaner = new BlockCleaner("cleaner", Material.GRASS, MapColor.LIGHT_BLUE);
         cleaner.setSound(SoundType.PLANT).setHardness(0f).setResistance(16.0f);
         cleaner.setHarvestLevel("shovel", 0);
         helpAddBlock(cleaner);
 
-        stopper = new BlockCleaner("stopper", Material.ROCK, MapColor.LIGHT_BLUE);
+        stopper = new MyBlock("stopper", Material.ROCK, MapColor.RED);
         stopper.setSound(SoundType.GLASS).setHardness(0f).setResistance(16.0f);
         stopper.setHarvestLevel("pickaxe", 0);
         helpAddBlock(stopper);
 
-        waterCleaner = new BlockWaterCleaner("waterCleaner", Material.GRASS, MapColor.GRASS);
+        waterCleaner = new BlockWaterCleaner("water_cleaner", Material.GRASS, MapColor.LIGHT_BLUE);
         waterCleaner.setSound(SoundType.PLANT).setHardness(0f).setResistance(16.0f);
         waterCleaner.setHarvestLevel("shovel", 0);
         helpAddBlock(waterCleaner);

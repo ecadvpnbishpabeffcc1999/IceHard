@@ -14,7 +14,7 @@ public class BlockCleanerManager {
         int tick;
 
         public StoppedCleanerId(int n) {
-            count = 1;
+            count = 0;
             tick = n;
         }
     }
@@ -30,7 +30,7 @@ public class BlockCleanerManager {
                 clr.tick--;
                 if (clr.tick <= 0) {
                     it.remove();
-                    System.out.println("Removed " + clr.count + " clearers from block " + entry.getKey());
+                    System.out.println("Removed " + clr.count + " clearers from id " + entry.getKey());
                 }
             }
         }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/water_cleaner",
+    "down": "icehard:blocks/water_cleaner",
+    "north": "icehard:blocks/water_cleaner",
+    "south": "icehard:blocks/water_cleaner",
+    "west": "icehard:blocks/water_cleaner",
+    "east": "icehard:blocks/water_cleaner",
+    "particle": "icehard:blocks/water_cleaner"
+  }
+}

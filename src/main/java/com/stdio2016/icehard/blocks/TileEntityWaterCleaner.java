@@ -28,6 +28,10 @@ public class TileEntityWaterCleaner extends TileEntityCleaner {
         return new TileEntityWaterCleaner();
     }
 
+    public IBlockState getMyBlock() {
+        return RegisterBlock.waterCleaner.getDefaultState();
+    }
+
     private boolean isLava(BlockPos pos) {
         IBlockState blk = getEquivalentBlock(world.getBlockState(pos));
         return blk == Blocks.LAVA.getDefaultState() || blk == Blocks.COBBLESTONE.getDefaultState();
