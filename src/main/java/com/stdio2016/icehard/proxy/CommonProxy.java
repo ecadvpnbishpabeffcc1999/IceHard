@@ -3,6 +3,7 @@ package com.stdio2016.icehard.proxy;
 import com.stdio2016.icehard.blocks.BlockCleanerManager;
 import com.stdio2016.icehard.blocks.RegisterBlock;
 import com.stdio2016.icehard.blocks.TileEntityCleaner;
+import com.stdio2016.icehard.blocks.TileEntityWaterCleaner;
 import com.stdio2016.icehard.items.RegisterItem;
 import com.stdio2016.icehard.worldgen.GenIceHard;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,6 +22,7 @@ public class CommonProxy {
         MinecraftForge.EVENT_BUS.register(RegisterItem.class);
         GameRegistry.registerWorldGenerator(new GenIceHard(), 1);
         GameRegistry.registerTileEntity(TileEntityCleaner.class, "tileEntityCleaner");
+        GameRegistry.registerTileEntity(TileEntityWaterCleaner.class, "tileEntityWaterCleaner");
     }
 
     public void init(FMLInitializationEvent ev) {

@@ -47,44 +47,42 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
     }
 
     public void clean(World world, BlockPos pos) {
-        if (range <= 0) {
-            if (world.getBlockState(pos).getBlock() instanceof BlockCleaner) {
-                world.setBlockState(pos, Blocks.AIR.getDefaultState(), 2);
-            }
-            return ;
-        }
         if (blocksToRemove == null || blocksToRemove.size() == 0) {
             if (world.isBlockIndirectlyGettingPowered(pos) <= 0) return;
-            blocksToRemove = new ArrayList<>();
             center = pos;
             id = new Random().nextInt();
-            BlockPos p = pos.up();
-            while (true) {
-                IBlockState blk = getEquivalentBlock(world.getBlockState(p));
-                if (blk == null) break;
-                blocksToRemove.add(blk);
-                p = p.up();
-            }
+            findClearBlocks();
         }
         else {
-            delay++;
-            if (delay < 25) return;
-            delay = 0;
+            delay--;
+            if (delay > 0) return;
+            double d = pos.distanceSq(center);
+            if (d > power || range <= 0) {
+                deleteSelf(true);
+                return;
+            }
             clear(world, pos.north());
             clear(world, pos.south());
             clear(world, pos.east());
             clear(world, pos.west());
             clear(world, pos.up());
             clear(world, pos.down());
-            if (world.getBlockState(pos).getBlock() instanceof BlockCleaner) {
-                world.setBlockState(pos, Blocks.AIR.getDefaultState(), 2);
-            }
+            deleteSelf(false);
         }
     }
 
-    private void clear(World world, BlockPos pos) {
-        double d = pos.distanceSq(center);
-        if (d > power || range <= 0) return;
+    protected void findClearBlocks() {
+        blocksToRemove = new ArrayList<>();
+        BlockPos p = pos.up();
+        while (true) {
+            IBlockState blk = getEquivalentBlock(world.getBlockState(p));
+            if (blk == null) break;
+            blocksToRemove.add(blk);
+            p = p.up();
+        }
+    }
+
+    protected void clear(World world, BlockPos pos) {
         IBlockState b = getEquivalentBlock(world.getBlockState(pos));
         if (BlockCleanerManager.isStopped(id)) {
             range = -1;
@@ -98,17 +96,26 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
         }
         if (blocksToRemove.contains(b)) {
             world.setBlockState(pos, RegisterBlock.cleaner.getDefaultState(), 2);
-            TileEntityCleaner te = new TileEntityCleaner();
+            TileEntityCleaner te = createSelf();
             te.blocksToRemove = blocksToRemove;
             te.id = id;
             te.range = range - 1;
             te.power = power;
             te.center = center;
+            te.delay = getDelayForBlock(b);
             world.setTileEntity(pos, te);
         }
     }
 
-    private IBlockState getEquivalentBlock(IBlockState a) {
+    public int getDelayForBlock(IBlockState blk) {
+        return 25;
+    }
+
+    protected TileEntityCleaner createSelf() {
+        return new TileEntityCleaner();
+    }
+
+    protected IBlockState getEquivalentBlock(IBlockState a) {
         Block b = a.getBlock();
         if (b == Blocks.LAVA || b == Blocks.FLOWING_LAVA) {
             return Blocks.LAVA.getDefaultState();
@@ -125,6 +132,10 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
         Collection<IProperty<?>> col = a.getPropertyKeys();
         int meta = b.damageDropped(a);
         return b.getStateFromMeta(meta);
+    }
+
+    protected void deleteSelf(boolean ended) {
+        world.setBlockState(pos, Blocks.AIR.getDefaultState(), 2);
     }
 
     @Override
