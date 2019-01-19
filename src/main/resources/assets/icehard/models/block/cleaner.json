@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/cleaner",
+    "down": "icehard:blocks/cleaner",
+    "north": "icehard:blocks/cleaner",
+    "south": "icehard:blocks/cleaner",
+    "west": "icehard:blocks/cleaner",
+    "east": "icehard:blocks/cleaner",
+    "particle": "icehard:blocks/cleaner"
+  }
+}

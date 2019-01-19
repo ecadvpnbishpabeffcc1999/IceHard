@@ -68,16 +68,16 @@ public class BlockIceHard extends MyBlock {
             for (int y = -2; y <= 1; y++) {
                 for (int z = -2; z <= 2; z++) {
                     if (rnd.nextInt(2) == 0) {
-                        updateTicks_test(world, pos, x, y, z, state);
+                        updateTicks_test(world, pos, new BlockPos(x,y,z), state);
                     }
                 }
             }
         }
     }
 
-    private void updateTicks_test(World world, BlockPos pos, int x, int y, int z,
+    private void updateTicks_test(World world, BlockPos pos, BlockPos offset,
                                   IBlockState state) {
-        pos = new BlockPos(pos.getX()+x,pos.getY()+y,pos.getZ()+z);
+        pos = pos.add(offset);
         IBlockState blk = world.getBlockState(pos);
         if (blk.getBlock() == Blocks.LAVA) {
             if (blk.getValue(BlockLiquid.LEVEL) == 0) {

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/stopper",
+    "down": "icehard:blocks/stopper",
+    "north": "icehard:blocks/stopper",
+    "south": "icehard:blocks/stopper",
+    "west": "icehard:blocks/stopper",
+    "east": "icehard:blocks/stopper",
+    "particle": "icehard:blocks/stopper"
+  }
+}

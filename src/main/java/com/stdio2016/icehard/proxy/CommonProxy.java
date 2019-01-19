@@ -1,5 +1,6 @@
 package com.stdio2016.icehard.proxy;
 
+import com.stdio2016.icehard.blocks.BlockCleanerManager;
 import com.stdio2016.icehard.blocks.RegisterBlock;
 import com.stdio2016.icehard.blocks.TileEntityCleaner;
 import com.stdio2016.icehard.items.RegisterItem;
@@ -24,5 +25,7 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent ev) {
         RegisterItem.init(ev);
+        MinecraftForge.EVENT_BUS.register(new BlockCleanerManager());
+        System.out.println();
     }
 }
