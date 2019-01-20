@@ -62,6 +62,13 @@ public class RegisterItem {
                 OreDictionary.registerOre(lv, brokenTool[j]);
             }
         }
+        for (int i = 0; i < BlockIceHard.MaxLevel; i++) {
+            String name = "icehard_tool_" + BlockIceHard.iceHardNames[i];
+            OreDictionary.registerOre(name, ItemIceHardAxe.items.get(i));
+            OreDictionary.registerOre(name, ItemIceHardHoe.items.get(i));
+            OreDictionary.registerOre(name, ItemIceHardPickaxe.items.get(i));
+            OreDictionary.registerOre(name, ItemIceHardShovel.items.get(i));
+        }
     }
 
     @SubscribeEvent

@@ -1,5 +1,6 @@
 package com.stdio2016.icehard.blocks;
 
+import com.stdio2016.icehard.Settings;
 import com.stdio2016.icehard.items.ItemIceHardBlock;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
@@ -64,11 +65,13 @@ public class BlockIceHard extends MyBlock {
 
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rnd) {
-        for (int x = -2; x <= 2; x++) {
-            for (int y = -2; y <= 1; y++) {
-                for (int z = -2; z <= 2; z++) {
-                    if (rnd.nextInt(2) == 0) {
-                        updateTicks_test(world, pos, new BlockPos(x,y,z), state);
+        if (Settings.IceHardFreezesWater) {
+            for (int x = -2; x <= 2; x++) {
+                for (int y = -2; y <= 1; y++) {
+                    for (int z = -2; z <= 2; z++) {
+                        if (rnd.nextInt(2) == 0) {
+                            updateTicks_test(world, pos, new BlockPos(x, y, z), state);
+                        }
                     }
                 }
             }

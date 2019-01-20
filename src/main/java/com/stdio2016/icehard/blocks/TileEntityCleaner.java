@@ -1,5 +1,6 @@
 package com.stdio2016.icehard.blocks;
 
+import com.stdio2016.icehard.Settings;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
@@ -40,7 +41,7 @@ public class TileEntityCleaner extends TileEntity implements ITickable {
     @Override
     public void update() {
         if (world.isRemote) return;
-        clean(world, pos);
+        if (Settings.CleanerEnabled) clean(world, pos);
     }
 
     public void clean(World world, BlockPos pos) {

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "icehard:cleaner"
+  },
+  "pattern": [
+    "ici",
+    "csc",
+    "ici"
+  ],
+  "key": {
+    "i": {"item": "icehard:icehard_blue"},
+    "c": {"item": "icehard:broken_tool_blue"},
+    "s": {"item": "icehard:icehard_shovel_blue"}
+  }
+}

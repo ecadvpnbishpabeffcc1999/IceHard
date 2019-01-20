@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "icehard:stopper"
+  },
+  "pattern": [
+    "isi",
+    " s ",
+    "isi"
+  ],
+  "key": {
+    "i": {"item": "icehard:icehard_blue"},
+    "s": {"item": "minecraft:redstone"}
+  }
+}

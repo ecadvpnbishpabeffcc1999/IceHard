@@ -42,9 +42,9 @@ public class RegisterBlock {
         cleaner.setHarvestLevel("shovel", 0);
         helpAddBlock(cleaner);
 
-        stopper = new MyBlock("stopper", Material.ROCK, MapColor.RED);
+        stopper = new MyBlock("stopper", Material.GROUND, MapColor.RED);
         stopper.setSound(SoundType.GLASS).setHardness(0f).setResistance(16.0f);
-        stopper.setHarvestLevel("pickaxe", 0);
+        stopper.setHarvestLevel("shovel", 0);
         helpAddBlock(stopper);
 
         waterCleaner = new BlockWaterCleaner("water_cleaner", Material.GRASS, MapColor.LIGHT_BLUE);
