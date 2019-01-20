@@ -1,6 +1,5 @@
 package com.stdio2016.icehard.blocks;
 
-import net.minecraft.block.BlockFlowerPot;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -13,10 +12,6 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import org.lwjgl.Sys;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by User on 2018/8/7.
@@ -57,16 +52,13 @@ public class BlockCleaner extends MyBlock implements ITileEntityProvider {
     @Override
     public void getDrops(NonNullList<ItemStack> list, IBlockAccess  world, BlockPos pos, IBlockState blockstate, int fortune){
         TileEntity te = world.getTileEntity(pos);
-        System.out.println("getdrops");
         if (te != null && te instanceof TileEntityCleaner) {
-            System.out.println("is a cleaner");
             final TileEntityCleaner cleaner = (TileEntityCleaner) te;
             if (cleaner.blocksToRemove != null && cleaner.blocksToRemove.size() > 0) {
                 // is working, don't drop anything
                 return ;
             }
         }
-        System.out.println("got drops");
         super.getDrops(list, world, pos, blockstate, fortune);
     }
 

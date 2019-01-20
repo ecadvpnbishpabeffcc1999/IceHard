@@ -28,6 +28,5 @@ public class CommonProxy {
     public void init(FMLInitializationEvent ev) {
         RegisterItem.init(ev);
         MinecraftForge.EVENT_BUS.register(new BlockCleanerManager());
-        System.out.println();
     }
 }
