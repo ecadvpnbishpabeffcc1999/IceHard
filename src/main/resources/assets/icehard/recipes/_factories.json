@@ -1,0 +1,5 @@
+{
+  "conditions": {
+    "settings_enabled": "com.stdio2016.icehard.CraftCondition"
+  }
+}

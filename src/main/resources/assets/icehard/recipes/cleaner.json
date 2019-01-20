@@ -12,5 +12,8 @@
     "i": {"item": "icehard:icehard_blue"},
     "c": {"item": "icehard:broken_tool_blue"},
     "s": {"item": "icehard:icehard_shovel_blue"}
-  }
+  },
+  "conditions": [
+    {"type": "icehard:settings_enabled", "name": "CleanerCraftable"}
+  ]
 }

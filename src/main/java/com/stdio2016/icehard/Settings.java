@@ -2,20 +2,20 @@ package com.stdio2016.icehard;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = IceHardMod.MODID)
 public class Settings {
-    @Config.Comment("Does Ice Hard freeze nearby water?")
+    @Config.LangKey("config.icehard.ice_hard_freezes_water.name")
     public static boolean IceHardFreezesWater = true;
 
-    @Config.Comment("Can you craft a block cleaner?")
+    @Config.LangKey("config.icehard.cleaner_craftable.name")
+    @Config.RequiresMcRestart
     public static boolean CleanerCraftable = false;
 
-    @Config.Comment("Do block cleaners work?")
+    @Config.LangKey("config.icehard.cleaner_enabled.name")
     public static boolean CleanerEnabled = true;
 
 

@@ -69,3 +69,10 @@ item.iceheart.name=Ice Heart
 item.energy_convert.name=Energy Converter
 item.mass_convert.name=Mass Converter
 itemGroup.icehard=Ice Hard
+
+config.icehard.ice_hard_freezes_water.name=Ice Hard freezes water
+config.icehard.ice_hard_freezes_water.name.tooltip=Does Ice Hard freeze nearby water?
+config.icehard.cleaner_craftable.name=Cleaner craftable
+config.icehard.cleaner_craftable.name.tooltip=Set to true to enable recipes for block cleaners.
+config.icehard.cleaner_enabled.name=Cleaner enabled
+config.icehard.cleaner_enabled.name.tooltip=Set to true to enable block cleaner.

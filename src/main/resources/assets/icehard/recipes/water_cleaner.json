@@ -12,5 +12,8 @@
     "i": {"item": "icehard:icehard_blue"},
     "c": {"item": "icehard:broken_tool_blue"},
     "b": {"item": "minecraft:bucket"}
-  }
+  },
+  "conditions": [
+    {"type": "icehard:settings_enabled", "name": "CleanerCraftable"}
+  ]
 }
