@@ -22,6 +22,9 @@ public class RegisterBlock {
     public static List<Block> blocks = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
     public static MyBlock massPile;
+    public static MyBlock cleaner;
+    public static MyBlock stopper;
+    public static MyBlock waterCleaner;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -33,6 +36,21 @@ public class RegisterBlock {
         massPile.setSound(SoundType.GLASS).setHardness(5f).setResistance(16.0f);
         massPile.setHarvestLevel("pickaxe", 1);
         helpAddBlock(massPile);
+
+        cleaner = new BlockCleaner("cleaner", Material.GRASS, MapColor.LIGHT_BLUE);
+        cleaner.setSound(SoundType.PLANT).setHardness(0f).setResistance(16.0f);
+        cleaner.setHarvestLevel("shovel", 0);
+        helpAddBlock(cleaner);
+
+        stopper = new MyBlock("stopper", Material.GROUND, MapColor.RED);
+        stopper.setSound(SoundType.GLASS).setHardness(0f).setResistance(16.0f);
+        stopper.setHarvestLevel("shovel", 0);
+        helpAddBlock(stopper);
+
+        waterCleaner = new BlockWaterCleaner("water_cleaner", Material.GRASS, MapColor.LIGHT_BLUE);
+        waterCleaner.setSound(SoundType.PLANT).setHardness(0f).setResistance(16.0f);
+        waterCleaner.setHarvestLevel("shovel", 0);
+        helpAddBlock(waterCleaner);
     }
 
     public static void helpAddBlock(MyBlock block) {

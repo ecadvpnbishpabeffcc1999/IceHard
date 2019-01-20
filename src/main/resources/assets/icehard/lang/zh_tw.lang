@@ -7,6 +7,11 @@ tile.icehard_purple.name=紫色冰硬
 tile.icehard_light.name=冰硬光
 tile.packed_icehard_blue.name=冰硬磚
 tile.masspile.name=質量堆
+
+tile.cleaner.name=方塊清除器
+tile.water_cleaner.name=水清除器
+tile.stopper.name=方塊清除器的停止器
+
 item.energypile.name=能量堆
 item.copper.name=銅
 item.copper_nugget.name=銅粒
@@ -64,3 +69,10 @@ item.iceheart.name=冰心
 item.energy_convert.name=能量轉換器
 item.mass_convert.name=質量轉換器
 itemGroup.icehard=冰硬
+
+config.icehard.ice_hard_freezes_water.name=冰硬可使水結冰
+config.icehard.ice_hard_freezes_water.name.tooltip=冰硬是否使附近的水結冰
+config.icehard.cleaner_craftable.name=可以合成清除器
+config.icehard.cleaner_craftable.name.tooltip=設定為true使清除器有合成公式
+config.icehard.cleaner_enabled.name=清除器有作用
+config.icehard.cleaner_enabled.name.tooltip=設定為true以啟動清除器

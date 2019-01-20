@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "icehard_copper",
+  "result": {"item": "icehard:broken_tool_light"},
+  "ingredients": [
+    {"type": "forge:ore_dict", "ore": "icehard_tool_light"},
+    {"item": "icehard:icehard_sword_light"}
+  ]
+}

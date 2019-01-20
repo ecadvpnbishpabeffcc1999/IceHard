@@ -7,6 +7,11 @@ tile.icehard_purple.name=Purple Ice Hard
 tile.icehard_light.name=Light Ice Hard
 tile.packed_icehard_blue.name=Packed Ice Hard
 tile.masspile.name=Mass Pile
+
+tile.cleaner.name=Block Cleaner
+tile.water_cleaner.name=Water Cleaner
+tile.stopper.name=Block Cleaner Stopper
+
 item.energypile.name=Energy Pile
 item.copper.name=Copper
 item.copper_nugget.name=Copper Nugget
@@ -64,3 +69,10 @@ item.iceheart.name=Ice Heart
 item.energy_convert.name=Energy Converter
 item.mass_convert.name=Mass Converter
 itemGroup.icehard=Ice Hard
+
+config.icehard.ice_hard_freezes_water.name=Ice Hard freezes water
+config.icehard.ice_hard_freezes_water.name.tooltip=Does Ice Hard freeze nearby water?
+config.icehard.cleaner_craftable.name=Cleaner craftable
+config.icehard.cleaner_craftable.name.tooltip=Set to true to enable recipes for block cleaners.
+config.icehard.cleaner_enabled.name=Cleaner enabled
+config.icehard.cleaner_enabled.name.tooltip=Set to true to enable block cleaner.

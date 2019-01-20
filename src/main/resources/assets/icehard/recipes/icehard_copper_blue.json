@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "icehard_copper",
+  "result": {"item": "icehard:broken_tool_blue"},
+  "ingredients": [
+    {"type": "forge:ore_dict", "ore": "icehard_tool_blue"},
+    {"item": "icehard:icehard_sword_blue"}
+  ]
+}
