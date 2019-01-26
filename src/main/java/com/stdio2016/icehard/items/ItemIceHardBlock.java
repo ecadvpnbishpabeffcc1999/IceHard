@@ -27,16 +27,22 @@ public class ItemIceHardBlock extends ItemBlock {
 
     @Override
     public EnumAction getItemUseAction(ItemStack stack) {
+        if (1 == 1)
+            return super.getItemUseAction(stack);
         return EnumAction.EAT;
     }
 
     @Override
     public int getMaxItemUseDuration(ItemStack stack) {
+        if (1 == 1)
+            return super.getMaxItemUseDuration(stack);
         return 16;
     }
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+        if (1 == 1)
+            return super.onItemRightClick(world, player, hand);
         RayTraceResult rtr = this.rayTrace(world, player, true);
         if (rtr == null) {
             ItemStack itemstack = player.getHeldItem(hand);
