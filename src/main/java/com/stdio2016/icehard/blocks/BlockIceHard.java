@@ -61,39 +61,6 @@ public class BlockIceHard extends MyBlock {
         this.setTickRandomly(true);
         this.item = new ItemIceHardBlock(this);
         this.item.setRegistryName(name).setUnlocalizedName(name);
-    }
-
-    @Override
-    public void updateTick(World world, BlockPos pos, IBlockState state, Random rnd) {
-        if (Settings.IceHardFreezesWater) {
-            for (int x = -2; x <= 2; x++) {
-                for (int y = -2; y <= 1; y++) {
-                    for (int z = -2; z <= 2; z++) {
-                        if (rnd.nextInt(2) == 0) {
-                            updateTicks_test(world, pos, new BlockPos(x, y, z), state);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    private void updateTicks_test(World world, BlockPos pos, BlockPos offset,
-                                  IBlockState state) {
-        pos = pos.add(offset);
-        IBlockState blk = world.getBlockState(pos);
-        if (blk.getBlock() == Blocks.LAVA) {
-            if (blk.getValue(BlockLiquid.LEVEL) == 0) {
-                world.setBlockState(pos, Blocks.OBSIDIAN.getDefaultState());
-            }
-            else if ((blk.getValue(BlockLiquid.LEVEL) & 7) < 4) {
-                world.setBlockState(pos, Blocks.STONE.getDefaultState());
-            }
-        }
-        else if (blk.getBlock() == Blocks.WATER) {
-            if ((blk.getValue(BlockLiquid.LEVEL) & 7) == 0) {
-                world.setBlockState(pos, Blocks.ICE.getDefaultState());
-            }
-        }
+        this.freezesWater = true;
     }
 }

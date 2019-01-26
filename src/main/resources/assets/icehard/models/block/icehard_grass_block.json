@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/icehard_grass_block",
+    "down": "icehard:blocks/icehard_sand",
+    "north": "icehard:blocks/icehard_grass_block_side",
+    "south": "icehard:blocks/icehard_grass_block_side",
+    "west": "icehard:blocks/icehard_grass_block_side",
+    "east": "icehard:blocks/icehard_grass_block_side",
+    "particle": "icehard:blocks/icehard_grass_block"
+  }
+}

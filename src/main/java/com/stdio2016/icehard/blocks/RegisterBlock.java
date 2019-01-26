@@ -25,6 +25,8 @@ public class RegisterBlock {
     public static MyBlock cleaner;
     public static MyBlock stopper;
     public static MyBlock waterCleaner;
+    public static BlockIceHardGrass GRASS_BLOCK;
+    public static MyBlock SAND;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -51,6 +53,20 @@ public class RegisterBlock {
         waterCleaner.setSound(SoundType.PLANT).setHardness(0f).setResistance(16.0f);
         waterCleaner.setHarvestLevel("shovel", 0);
         helpAddBlock(waterCleaner);
+
+        GRASS_BLOCK = new BlockIceHardGrass("icehard_grass_block", Material.GRASS, MapColor.GRASS);
+        GRASS_BLOCK.setSound(SoundType.PLANT).setHardness(0.5f).setResistance(6.0f);
+        GRASS_BLOCK.setHarvestLevel("shovel", 0);
+        GRASS_BLOCK.setTickRandomly(true);
+        GRASS_BLOCK.freezesWater = true;
+        helpAddBlock(GRASS_BLOCK);
+
+        SAND = new BlockIceHardGrass("icehard_sand", Material.GROUND, MapColor.DIRT);
+        SAND.setSound(SoundType.GROUND).setHardness(0.5f).setResistance(5.0f);
+        SAND.setHarvestLevel("shovel", 0);
+        SAND.setTickRandomly(true);
+        SAND.freezesWater = true;
+        helpAddBlock(SAND);
     }
 
     public static void helpAddBlock(MyBlock block) {
