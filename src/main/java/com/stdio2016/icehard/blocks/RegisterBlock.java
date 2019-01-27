@@ -2,10 +2,12 @@ package com.stdio2016.icehard.blocks;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -27,6 +29,8 @@ public class RegisterBlock {
     public static MyBlock waterCleaner;
     public static BlockIceHardGrass GRASS_BLOCK;
     public static MyBlock SAND;
+    public static BlockIceHardLog IceHardLog;
+    public static BlockIceHardLeaves IceHardLeaves;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -67,6 +71,14 @@ public class RegisterBlock {
         SAND.setTickRandomly(true);
         SAND.freezesWater = true;
         helpAddBlock(SAND);
+
+        IceHardLog = new BlockIceHardLog("icehard_log");
+        blocks.add(IceHardLog);
+        items.add(IceHardLog.item);
+
+        IceHardLeaves = new BlockIceHardLeaves("icehard_leaves");
+        blocks.add(IceHardLeaves);
+        items.add(IceHardLeaves.item);
     }
 
     public static void helpAddBlock(MyBlock block) {

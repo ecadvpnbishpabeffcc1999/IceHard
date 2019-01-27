@@ -2,10 +2,14 @@ package com.stdio2016.icehard.worldgen;
 
 import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
+import net.minecraft.block.BlockLog;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
+import java.util.Random;
 
 public class IceHardPlainsBiome extends Biome {
     public static IceHardPlainsBiome INSTANCE, INSTANCE2;
@@ -22,6 +26,11 @@ public class IceHardPlainsBiome extends Biome {
         fillerBlock = RegisterBlock.SAND.getDefaultState();
     }
 
+    @Override
+    public WorldGenAbstractTree getRandomTreeFeature(Random p_getRandomTreeFeature_1_) {
+        return IceHardForestBiome.IceHardTree;
+    }
+
     public static void register() {
         IceHardPlainsBiome biome = new IceHardPlainsBiome("Ice Hard Plains");
         INSTANCE = biome;
@@ -36,7 +45,7 @@ public class IceHardPlainsBiome extends Biome {
         biome2.setRegistryName("icehard_plains2");
         ForgeRegistries.BIOMES.register(biome2);
         BiomeDictionary.addTypes(biome2, BiomeDictionary.Type.COLD, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.SNOWY);
-        BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome2, 10));
+        BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome2, 5));
         BiomeManager.addSpawnBiome(biome2);
     }
 }

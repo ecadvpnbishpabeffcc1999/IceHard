@@ -10,8 +10,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 
 import java.util.Random;
 
@@ -79,5 +83,15 @@ public class MyBlock extends Block {
                 world.setBlockState(pos, Blocks.ICE.getDefaultState());
             }
         }
+    }
+
+    @Override
+    public boolean canSustainPlant(IBlockState block, IBlockAccess blockAccess, BlockPos pos, EnumFacing facing, IPlantable plant) {
+        EnumPlantType plantType = plant.getPlantType(blockAccess, pos);
+        switch (plantType) {
+            case Plains:
+                return this == RegisterBlock.SAND || this == RegisterBlock.GRASS_BLOCK;
+        }
+        return false;
     }
 }

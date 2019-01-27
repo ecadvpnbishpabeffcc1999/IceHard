@@ -1,0 +1,9 @@
+
+{
+  "variants": {
+    "axis=y": {"model": "icehard:icehard_log"},
+    "axis=z": {"model": "icehard:icehard_log", "x": 90},
+    "axis=x": {"model": "icehard:icehard_log", "x": 90, "y": 90},
+    "axis=none": {"model": "icehard:icehard_log_bark"}
+  }
+}
