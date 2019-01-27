@@ -31,6 +31,7 @@ public class RegisterBlock {
     public static MyBlock SAND;
     public static BlockIceHardLog IceHardLog;
     public static BlockIceHardLeaves IceHardLeaves;
+    public static BlockIceHardTallGrass IceHardTallGrass;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -79,6 +80,10 @@ public class RegisterBlock {
         IceHardLeaves = new BlockIceHardLeaves("icehard_leaves");
         blocks.add(IceHardLeaves);
         items.add(IceHardLeaves.item);
+
+        IceHardTallGrass = new BlockIceHardTallGrass("icehard_grass");
+        blocks.add(IceHardTallGrass);
+        items.add(IceHardTallGrass.item);
     }
 
     public static void helpAddBlock(MyBlock block) {

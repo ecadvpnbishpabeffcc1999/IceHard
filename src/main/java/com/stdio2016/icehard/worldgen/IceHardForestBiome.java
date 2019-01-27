@@ -2,10 +2,13 @@ package com.stdio2016.icehard.worldgen;
 
 import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
+import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.biome.BiomeForest;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenTrees;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -31,6 +34,11 @@ public class IceHardForestBiome extends BiomeForest {
     @Override
     public WorldGenAbstractTree getRandomTreeFeature(Random p_getRandomTreeFeature_1_) {
         return IceHardTree;
+    }
+
+    @Override
+    public WorldGenerator getRandomWorldGenForGrass(Random p_getRandomWorldGenForGrass_1_) {
+        return new GenIceHardGrass(RegisterBlock.IceHardTallGrass.getDefaultState());
     }
 
     private static void createTree() {

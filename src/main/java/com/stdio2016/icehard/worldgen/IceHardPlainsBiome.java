@@ -5,6 +5,7 @@ import com.stdio2016.icehard.blocks.RegisterBlock;
 import net.minecraft.block.BlockLog;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -29,6 +30,11 @@ public class IceHardPlainsBiome extends Biome {
     @Override
     public WorldGenAbstractTree getRandomTreeFeature(Random p_getRandomTreeFeature_1_) {
         return IceHardForestBiome.IceHardTree;
+    }
+
+    @Override
+    public WorldGenerator getRandomWorldGenForGrass(Random p_getRandomWorldGenForGrass_1_) {
+        return new GenIceHardGrass(RegisterBlock.IceHardTallGrass.getDefaultState());
     }
 
     public static void register() {
