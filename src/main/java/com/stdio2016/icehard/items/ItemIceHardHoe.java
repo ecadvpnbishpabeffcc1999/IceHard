@@ -2,6 +2,9 @@ package com.stdio2016.icehard.items;
 
 import com.stdio2016.icehard.IceHardMod;
 import com.stdio2016.icehard.blocks.BlockIceHard;
+import com.stdio2016.icehard.blocks.RegisterBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -66,6 +69,14 @@ public class ItemIceHardHoe extends ItemHoe {
         ItemStack item = user.getHeldItem(hand);
         int dmg = item.getItemDamage();
         EnumActionResult r = super.onItemUse(user, world, pos, hand, facing, offsetX, offsetY, offsetZ);
+        if (r == EnumActionResult.PASS) {
+            IBlockState state = world.getBlockState(pos);
+            Block block = state.getBlock();
+            if (block == RegisterBlock.SAND || block == RegisterBlock.GRASS_BLOCK) {
+                this.setBlock(item, user, world, pos, RegisterBlock.IceHardFarmland.getDefaultState());
+            }
+            r = EnumActionResult.SUCCESS;
+        }
         int dmgNow = item.getItemDamage();
         if (dmgNow == 0 && dmgNow < dmg) {
             this.throwBrokenTool(item, world, user);

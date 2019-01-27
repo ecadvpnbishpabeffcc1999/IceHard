@@ -32,6 +32,7 @@ public class RegisterBlock {
     public static BlockIceHardLog IceHardLog;
     public static BlockIceHardLeaves IceHardLeaves;
     public static BlockIceHardTallGrass IceHardTallGrass;
+    public static BlockIceHardFarmland IceHardFarmland;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -84,6 +85,11 @@ public class RegisterBlock {
         IceHardTallGrass = new BlockIceHardTallGrass("icehard_grass");
         blocks.add(IceHardTallGrass);
         items.add(IceHardTallGrass.item);
+
+        IceHardFarmland = new BlockIceHardFarmland("icehard_farmland", Material.GROUND, MapColor.DIRT);
+        IceHardFarmland.setSound(SoundType.SAND).setHardness(0.5f);
+        IceHardFarmland.setHarvestLevel("shovel", 0);
+        helpAddBlock(IceHardFarmland);
     }
 
     public static void helpAddBlock(MyBlock block) {

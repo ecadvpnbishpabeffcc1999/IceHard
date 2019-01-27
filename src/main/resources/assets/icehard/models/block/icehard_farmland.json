@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "up": "icehard:blocks/icehard_farmland",
+    "down": "icehard:blocks/icehard_sand",
+    "north": "icehard:blocks/icehard_sand",
+    "south": "icehard:blocks/icehard_sand",
+    "west": "icehard:blocks/icehard_sand",
+    "east": "icehard:blocks/icehard_sand",
+    "particle": "icehard:blocks/icehard_sand"
+  }
+}
