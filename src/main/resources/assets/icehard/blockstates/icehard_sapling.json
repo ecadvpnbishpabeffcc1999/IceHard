@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "stage=0": {"model":"icehard:icehard_sapling"},
+    "stage=1": {"model":"icehard:icehard_sapling"}
+  }
+}

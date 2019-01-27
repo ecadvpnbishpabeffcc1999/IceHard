@@ -4,6 +4,7 @@ import com.stdio2016.icehard.IceHardMod;
 import net.minecraft.block.*;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -12,6 +13,7 @@ import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by User on 2019/1/27.
@@ -25,7 +27,11 @@ public class BlockIceHardLeaves extends BlockLeaves {
         this.setDefaultState(this.blockState.getBaseState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true));
         this.item = new ItemBlock(this);
         this.item.setRegistryName(name).setUnlocalizedName(name);
+    }
 
+    @Override
+    public Item getItemDropped(IBlockState p_getItemDropped_1_, Random p_getItemDropped_2_, int p_getItemDropped_3_) {
+        return RegisterBlock.SAPLING.item;
     }
 
     @Override

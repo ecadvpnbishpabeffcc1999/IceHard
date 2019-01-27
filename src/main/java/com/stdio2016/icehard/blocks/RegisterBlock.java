@@ -3,6 +3,7 @@ package com.stdio2016.icehard.blocks;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -33,6 +34,7 @@ public class RegisterBlock {
     public static BlockIceHardLeaves IceHardLeaves;
     public static BlockIceHardTallGrass IceHardTallGrass;
     public static BlockIceHardFarmland IceHardFarmland;
+    public static BlockIceHardSapling SAPLING;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -90,6 +92,11 @@ public class RegisterBlock {
         IceHardFarmland.setSound(SoundType.SAND).setHardness(0.5f);
         IceHardFarmland.setHarvestLevel("shovel", 0);
         helpAddBlock(IceHardFarmland);
+
+        SAPLING = new BlockIceHardSapling("icehard_sapling");
+        SAPLING.setHardness(0.0f);
+        blocks.add(SAPLING);
+        items.add(SAPLING.item);
     }
 
     public static void helpAddBlock(MyBlock block) {
