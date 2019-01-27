@@ -45,7 +45,7 @@ public class MyBlock extends Block {
 
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rnd) {
-        if (freezesWater && Settings.IceHardFreezesWater) {
+        if (freezesWater && !world.isRemote && Settings.IceHardFreezesWater) {
             freezeNearbyWater(world, pos, state, rnd);
         }
     }

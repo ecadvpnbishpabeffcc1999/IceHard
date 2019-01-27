@@ -61,8 +61,8 @@ public class RegisterBlock {
         GRASS_BLOCK.freezesWater = true;
         helpAddBlock(GRASS_BLOCK);
 
-        SAND = new BlockIceHardGrass("icehard_sand", Material.GROUND, MapColor.DIRT);
-        SAND.setSound(SoundType.GROUND).setHardness(0.5f).setResistance(5.0f);
+        SAND = new BlockIceHardGrass("icehard_sand", Material.GROUND, MapColor.SAND);
+        SAND.setSound(SoundType.SAND).setHardness(0.5f).setResistance(5.0f);
         SAND.setHarvestLevel("shovel", 0);
         SAND.setTickRandomly(true);
         SAND.freezesWater = true;
