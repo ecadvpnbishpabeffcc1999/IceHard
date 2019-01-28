@@ -1,6 +1,8 @@
 package com.stdio2016.icehard.blocks;
 
 import com.google.common.collect.Lists;
+import com.stdio2016.icehard.items.ItemEnergyPile;
+import com.stdio2016.icehard.items.RegisterItem;
 import com.stdio2016.icehard.worldgen.IceHardForestBiome;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
@@ -10,6 +12,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -143,5 +146,7 @@ public class RegisterBlock {
         // sorry but tree generators are initialized here
         RegisterBlock.ICE_SAPLING.treeGenerator = IceHardForestBiome.IceHardIceTree;
         RegisterBlock.SAPLING.treeGenerator = IceHardForestBiome.IceHardHardTree;
+
+        IceHardIceLeaves.fruitItemStack = null /* TODO:  ice hard cream */;
     }
 }

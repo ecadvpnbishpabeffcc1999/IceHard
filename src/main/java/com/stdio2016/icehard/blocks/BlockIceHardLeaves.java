@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.Random;
 public class BlockIceHardLeaves extends BlockLeaves implements IBlockIceHard {
     public ItemBlock item;
     public Item saplingItem;
+    public ItemStack fruitItemStack;
     public BlockIceHardLeaves(String name) {
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
@@ -71,5 +73,12 @@ public class BlockIceHardLeaves extends BlockLeaves implements IBlockIceHard {
 
     public Item itemBlock() {
         return item;
+    }
+
+    @Override
+    protected void dropApple(World world, BlockPos pos, IBlockState state, int chance) {
+        if (fruitItemStack != null &&world.rand.nextInt(chance) == 0) {
+            spawnAsEntity(world, pos, fruitItemStack);
+        }
     }
 }

@@ -13,10 +13,10 @@ public class Settings {
 
     @Config.LangKey("config.icehard.cleaner_craftable.name")
     @Config.RequiresMcRestart
-    public static boolean CleanerCraftable = false;
+    public static boolean CleanerCraftable = true;
 
     @Config.LangKey("config.icehard.cleaner_enabled.name")
-    public static boolean CleanerEnabled = true;
+    public static boolean CleanerEnabled = false;
 
 
     @Mod.EventBusSubscriber(modid = IceHardMod.MODID)

@@ -6,8 +6,10 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import java.util.Random;
 
@@ -46,7 +48,24 @@ public class BlockIceHardGrass extends MyBlock {
 
     public void spreadTallGrass(World world, BlockPos pos, Random rnd) {
         if (!world.isRemote) {
-            new GenIceHardGrass().generate(world, rnd, pos);
+            Biome biome = world.getBiome(pos);
+            final int howMany = 100;
+            IBlockState grassBlock = RegisterBlock.IceHardTallGrass.getDefaultState();
+            for (int t = 0; t < howMany; t++) {
+                int x = rnd.nextInt(8) - rnd.nextInt(8);
+                int y = rnd.nextInt(4) - rnd.nextInt(4);
+                int z = rnd.nextInt(8) - rnd.nextInt(8);
+                BlockPos pos2 = pos.add(x, y, z);
+                if (world.isAirBlock(pos2)) {
+                    IBlockState blk = world.getBlockState(pos2.down());
+                    if (blk.getBlock().canSustainPlant(blk, world, pos.down(), EnumFacing.UP, RegisterBlock.IceHardTallGrass)) {
+                        world.setBlockState(pos2, grassBlock, 2);
+                    }
+                    if (rnd.nextInt(8) == 3) {
+                        biome.plantFlower(world, rnd, pos2);
+                    }
+                }
+            }
         }
     }
 
