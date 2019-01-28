@@ -20,10 +20,12 @@ import java.util.Random;
  */
 public class BlockIceHardLeaves extends BlockLeaves implements IBlockIceHard {
     public ItemBlock item;
+    public Item saplingItem;
     public BlockIceHardLeaves(String name) {
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(IceHardMod.ourTab);
+        this.setSoundType(SoundType.GLASS);
         this.setDefaultState(this.blockState.getBaseState().withProperty(DECAYABLE, true).withProperty(CHECK_DECAY, true));
         this.item = new ItemBlock(this);
         this.item.setRegistryName(name).setUnlocalizedName(name);
@@ -31,7 +33,7 @@ public class BlockIceHardLeaves extends BlockLeaves implements IBlockIceHard {
 
     @Override
     public Item getItemDropped(IBlockState p_getItemDropped_1_, Random p_getItemDropped_2_, int p_getItemDropped_3_) {
-        return RegisterBlock.SAPLING.item;
+        return saplingItem;
     }
 
     @Override

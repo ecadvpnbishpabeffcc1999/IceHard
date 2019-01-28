@@ -1,9 +1,13 @@
 
 {
   "variants": {
-    "axis=y": {"model": "icehard:icehard_log"},
-    "axis=z": {"model": "icehard:icehard_log", "x": 90},
-    "axis=x": {"model": "icehard:icehard_log", "x": 90, "y": 90},
-    "axis=none": {"model": "icehard:icehard_log_bark"}
+    "axis=y,has_tap=0": {"model": "icehard:icehard_log"},
+    "axis=z,has_tap=0": {"model": "icehard:icehard_log", "x": 90},
+    "axis=x,has_tap=0": {"model": "icehard:icehard_log", "x": 90, "y": 90},
+    "axis=none,has_tap=0": {"model": "icehard:icehard_log_bark"},
+    "axis=y,has_tap=1": {"model": "icehard:icehard_log_tap"},
+    "axis=z,has_tap=1": {"model": "icehard:icehard_log_tap", "x": 90},
+    "axis=x,has_tap=1": {"model": "icehard:icehard_log_tap", "x": 90, "y": 90},
+    "axis=none,has_tap=1": {"model": "icehard:icehard_log_bark_tap"}
   }
 }

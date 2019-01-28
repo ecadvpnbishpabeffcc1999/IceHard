@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "icehard:blocks/icehard_ice_log_top",
+    "side": "icehard:blocks/icehard_ice_log"
+  }
+}

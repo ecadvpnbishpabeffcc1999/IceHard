@@ -16,6 +16,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
@@ -29,6 +30,7 @@ import java.util.Random;
 
 public class BlockIceHardSapling extends BlockBush implements IGrowable, IBlockIceHard {
     public ItemBlock item;
+    public WorldGenerator treeGenerator;
     public static PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     public static AxisAlignedBB Aabb = new AxisAlignedBB(0.1, 0, 0.1, 0.9, 0.8, 0.9);
     public BlockIceHardSapling(String name) {
@@ -57,7 +59,7 @@ public class BlockIceHardSapling extends BlockBush implements IGrowable, IBlockI
 
     public void generateTree(World world, BlockPos pos, IBlockState state, Random rnd) {
         if (!TerrainGen.saplingGrowTree(world, rnd, pos)) return;
-        WorldGenerator gen = IceHardForestBiome.IceHardTree;
+        WorldGenerator gen = treeGenerator;
         world.setBlockState(pos, Blocks.AIR.getDefaultState(), 4);
         if (!gen.generate(world, rnd, pos)) {
             world.setBlockState(pos, this.getDefaultState().withProperty(STAGE, 1), 4);

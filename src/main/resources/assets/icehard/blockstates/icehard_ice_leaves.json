@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "check_decay=true,decayable=true": {"model":"icehard:icehard_ice_leaves"},
+    "check_decay=true,decayable=false": {"model":"icehard:icehard_ice_leaves"},
+    "check_decay=false,decayable=true": {"model":"icehard:icehard_ice_leaves"},
+    "check_decay=false,decayable=false": {"model":"icehard:icehard_ice_leaves"}
+  }
+}

@@ -2,6 +2,7 @@ package com.stdio2016.icehard.blocks;
 
 import com.stdio2016.icehard.IceHardMod;
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -17,6 +18,7 @@ public class BlockIceHardLog extends BlockLog implements IBlockIceHard {
         this.setUnlocalizedName(name);
         this.setRegistryName(name);
         this.setCreativeTab(IceHardMod.ourTab);
+        this.setSoundType(SoundType.GLASS);
         this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, EnumAxis.Y));
         this.item = new ItemBlock(this);
         this.item.setRegistryName(name).setUnlocalizedName(name);

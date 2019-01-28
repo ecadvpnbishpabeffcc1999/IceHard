@@ -20,7 +20,8 @@ import java.util.Random;
 
 public class IceHardForestBiome extends BiomeForest {
     public static IceHardForestBiome INSTANCE, INSTANCE2;
-    public static WorldGenTrees IceHardTree;
+    public static WorldGenTrees IceHardHardTree;
+    public static WorldGenTrees IceHardIceTree;
 
     public static BiomeProperties getThisBiomeProperties(String name) {
         BiomeProperties props = new BiomeProperties(name);
@@ -37,19 +38,23 @@ public class IceHardForestBiome extends BiomeForest {
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random p_getRandomTreeFeature_1_) {
-        return IceHardTree;
+    public WorldGenAbstractTree getRandomTreeFeature(Random rnd) {
+        return rnd.nextInt(3) == 1 ? IceHardIceTree : IceHardHardTree;
     }
 
     @Override
-    public WorldGenerator getRandomWorldGenForGrass(Random p_getRandomWorldGenForGrass_1_) {
+    public WorldGenerator getRandomWorldGenForGrass(Random rnd) {
         return new GenIceHardGrass();
     }
 
     private static void createTree() {
-        IBlockState trunk = RegisterBlock.IceHardLog.getDefaultState();
-        IBlockState leave = RegisterBlock.IceHardLeaves.getDefaultState();
-        IceHardTree = new WorldGenTrees(false, 4, trunk, leave, false);
+        IBlockState trunk = RegisterBlock.IceHardHardLog.getDefaultState();
+        IBlockState leave = RegisterBlock.IceHardHardLeaves.getDefaultState();
+        IceHardHardTree = new WorldGenTrees(false, 4, trunk, leave, false);
+
+        trunk = RegisterBlock.IceHardIceLog.getDefaultState();
+        leave = RegisterBlock.IceHardIceLeaves.getDefaultState();
+        IceHardIceTree = new WorldGenTrees(false, 4, trunk, leave, false);
     }
 
     public static void register() {

@@ -30,8 +30,8 @@ public class IceHardPlainsBiome extends Biome {
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random p_getRandomTreeFeature_1_) {
-        return IceHardForestBiome.IceHardTree;
+    public WorldGenAbstractTree getRandomTreeFeature(Random rnd) {
+        return rnd.nextInt(3) == 1 ? IceHardForestBiome.IceHardIceTree : IceHardForestBiome.IceHardHardTree;
     }
 
     @Override

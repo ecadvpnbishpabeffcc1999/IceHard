@@ -1,6 +1,7 @@
 package com.stdio2016.icehard.blocks;
 
 import com.google.common.collect.Lists;
+import com.stdio2016.icehard.worldgen.IceHardForestBiome;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockSapling;
@@ -10,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -30,10 +32,13 @@ public class RegisterBlock {
     public static MyBlock waterCleaner;
     public static BlockIceHardGrass GRASS_BLOCK;
     public static MyBlock SAND;
-    public static BlockIceHardLog IceHardLog;
-    public static BlockIceHardLeaves IceHardLeaves;
+    public static BlockIceHardLog IceHardIceLog;
+    public static BlockIceHardHardLog IceHardHardLog;
+    public static BlockIceHardLeaves IceHardIceLeaves;
+    public static BlockIceHardLeaves IceHardHardLeaves;
     public static BlockIceHardTallGrass IceHardTallGrass;
     public static BlockIceHardFarmland IceHardFarmland;
+    public static BlockIceHardSapling ICE_SAPLING;
     public static BlockIceHardSapling SAPLING;
     public static BlockIceHardFlower FLOWER;
 
@@ -77,11 +82,17 @@ public class RegisterBlock {
         SAND.freezesWater = true;
         helpAddBlock(SAND);
 
-        IceHardLog = new BlockIceHardLog("icehard_log");
-        helpAddBlock(IceHardLog);
+        IceHardIceLog = new BlockIceHardLog("icehard_ice_log");
+        helpAddBlock(IceHardIceLog);
 
-        IceHardLeaves = new BlockIceHardLeaves("icehard_leaves");
-        helpAddBlock(IceHardLeaves);
+        IceHardHardLog = new BlockIceHardHardLog("icehard_log");
+        helpAddBlock(IceHardHardLog);
+
+        IceHardIceLeaves = new BlockIceHardLeaves("icehard_ice_leaves");
+        helpAddBlock(IceHardIceLeaves);
+
+        IceHardHardLeaves = new BlockIceHardLeaves("icehard_leaves");
+        helpAddBlock(IceHardHardLeaves);
 
         IceHardTallGrass = new BlockIceHardTallGrass("icehard_grass");
         helpAddBlock(IceHardTallGrass);
@@ -91,8 +102,14 @@ public class RegisterBlock {
         IceHardFarmland.setHarvestLevel("shovel", 0);
         helpAddBlock(IceHardFarmland);
 
+        ICE_SAPLING = new BlockIceHardSapling("icehard_ice_sapling");
+        ICE_SAPLING.setHardness(0.0f);
+        IceHardIceLeaves.saplingItem = ICE_SAPLING.item;
+        helpAddBlock(ICE_SAPLING);
+
         SAPLING = new BlockIceHardSapling("icehard_sapling");
         SAPLING.setHardness(0.0f);
+        IceHardHardLeaves.saplingItem = SAPLING.item;
         helpAddBlock(SAPLING);
 
         FLOWER= new BlockIceHardFlower("icehard_flower");
@@ -120,5 +137,11 @@ public class RegisterBlock {
         for (Item i : items) {
             reg.register(i);
         }
+    }
+
+    public static void init(FMLInitializationEvent ev) {
+        // sorry but tree generators are initialized here
+        RegisterBlock.ICE_SAPLING.treeGenerator = IceHardForestBiome.IceHardIceTree;
+        RegisterBlock.SAPLING.treeGenerator = IceHardForestBiome.IceHardHardTree;
     }
 }
