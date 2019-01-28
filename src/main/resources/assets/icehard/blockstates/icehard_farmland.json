@@ -1,7 +1,10 @@
 {
   "variants": {
-    "normal": {
+    "iced=0": {
       "model":"icehard:icehard_farmland"
+    },
+    "iced=1": {
+      "model":"icehard:icehard_farmland_iced"
     }
   }
 }

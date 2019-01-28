@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
@@ -20,17 +22,28 @@ import java.util.Random;
  * Created by User on 2019/1/27.
  */
 public class BlockIceHardFarmland extends MyBlock {
+    public static PropertyInteger ICED = PropertyInteger.create("iced", 0, 1);
     public BlockIceHardFarmland(String name, Material mat, MapColor mapColor) {
         super(name, mat, mapColor);
         this.setTickRandomly(true);
         this.freezesWater = true;
+        this.setDefaultState(this.blockState.getBaseState().withProperty(ICED, 0));
     }
 
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rnd) {
         super.updateTick(world, pos, state, rnd);
+        int iced = state.getValue(ICED);
         if (!hasIce(world, pos)) {
-            if (!hasCrop(world, pos)) turnToSand(world, pos);
+            if (iced == 0) {
+                if (!hasCrop(world, pos)) turnToSand(world, pos);
+            }
+            else {
+                world.setBlockState(pos, state.withProperty(ICED, iced-1));
+            }
+        }
+        else if (iced < 1) {
+            world.setBlockState(pos, state.withProperty(ICED, iced+1));
         }
     }
 
@@ -84,4 +97,28 @@ public class BlockIceHardFarmland extends MyBlock {
             return this.canSustainPlant(world.getBlockState(pos), world, pos, EnumFacing.UP, (IPlantable)block);
         return false;
     }
+
+    @Override
+    public boolean isFertile(World world, BlockPos pos) {
+        IBlockState block = world.getBlockState(pos);
+        return block.getBlock() == this && block.getValue(ICED) == 1;
+    }
+
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        IBlockState state = this.getDefaultState();
+        state = state.withProperty(ICED, meta&1);
+        return state;
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(ICED);
+    }
+
+    @Override
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ICED);
+    }
+
 }

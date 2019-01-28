@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "icehard:masspile",
+    "count": 4
+  },
+  "pattern": [
+    "ss",
+    "ss"
+  ],
+  "key": {
+    "s": {"item": "icehard:icehard_sand"}
+  }
+}
