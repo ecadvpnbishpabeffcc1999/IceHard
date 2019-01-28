@@ -21,9 +21,9 @@ public class GenIceHardFlower extends GenIceHardGrass implements IWorldGenerator
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         final int CHUNK_SIZE = 16;
-        int x = chunkX * CHUNK_SIZE + random.nextInt(CHUNK_SIZE);
+        int x = chunkX * CHUNK_SIZE + CHUNK_SIZE/2;
         int y = 255;
-        int z = chunkZ * CHUNK_SIZE + random.nextInt(CHUNK_SIZE);
+        int z = chunkZ * CHUNK_SIZE + CHUNK_SIZE/2;
         BlockPos pos = new BlockPos(x, y, z);
         Biome biome = world.getBiome(pos);
         // only generate on mod biome

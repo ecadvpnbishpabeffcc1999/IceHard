@@ -6,6 +6,7 @@ import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeForest;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
@@ -68,5 +69,10 @@ public class IceHardForestBiome extends BiomeForest {
         BiomeDictionary.addTypes(biome2, BiomeDictionary.Type.COLD, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.SNOWY);
         BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome2, 5));
         BiomeManager.addSpawnBiome(biome2);
+
+        int id1 = Biome.REGISTRY.getIDForObject(biome);
+        int id2 = Biome.REGISTRY.getIDForObject(biome2);
+        System.out.println("Ice Hard Forest id = "+id1);
+        System.out.println("Ice Hard Forest 2 id = "+id2);
     }
 }

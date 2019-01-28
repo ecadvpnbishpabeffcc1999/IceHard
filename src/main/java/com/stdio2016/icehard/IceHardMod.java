@@ -12,6 +12,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+//
+// Use this superflat preset:
+// 3;minecraft:bedrock,59*minecraft:stone,3*icehard:icehard_sand,icehard:icehard_grass_block;40;village,biome_1,decoration,stronghold,mineshaft,lake,lava_lake,dungeon
+
 @Mod(modid = IceHardMod.MODID, version = IceHardMod.VERSION)
 public class IceHardMod
 {

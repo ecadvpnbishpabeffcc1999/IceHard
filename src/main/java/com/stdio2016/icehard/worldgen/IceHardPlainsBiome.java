@@ -55,5 +55,10 @@ public class IceHardPlainsBiome extends Biome {
         BiomeDictionary.addTypes(biome2, BiomeDictionary.Type.COLD, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.SNOWY);
         BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome2, 5));
         BiomeManager.addSpawnBiome(biome2);
+
+        int id1 = Biome.REGISTRY.getIDForObject(biome);
+        int id2 = Biome.REGISTRY.getIDForObject(biome2);
+        System.out.println("Ice Hard Plains id = "+id1);
+        System.out.println("Ice Hard Plains 2 id = "+id2);
     }
 }
