@@ -3,6 +3,7 @@ package com.stdio2016.icehard.worldgen;
 import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
 import net.minecraft.block.BlockLog;
+import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -27,6 +28,8 @@ public class IceHardPlainsBiome extends Biome {
         fillerBlock = RegisterBlock.SAND.getDefaultState();
         flowers.clear();
         flowers.add(new FlowerEntry(RegisterBlock.FLOWER.getDefaultState(), 20));
+        spawnableCreatureList.clear();
+        spawnableCreatureList.add(new SpawnListEntry(EntityLlama.class, 5, 4, 6));
     }
 
     @Override

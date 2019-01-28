@@ -5,6 +5,7 @@ import com.stdio2016.icehard.blocks.RegisterBlock;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeForest;
@@ -35,6 +36,8 @@ public class IceHardForestBiome extends BiomeForest {
         fillerBlock = RegisterBlock.SAND.getDefaultState();
         flowers.clear();
         flowers.add(new FlowerEntry(RegisterBlock.FLOWER.getDefaultState(), 20));
+        spawnableCreatureList.clear();
+        spawnableCreatureList.add(new SpawnListEntry(EntityLlama.class, 5, 4, 6));
     }
 
     @Override

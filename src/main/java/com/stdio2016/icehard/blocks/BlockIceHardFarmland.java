@@ -50,15 +50,23 @@ public class BlockIceHardFarmland extends MyBlock {
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos pos2) {
         super.neighborChanged(state, world, pos, block, pos2);
-        if (world.getBlockState(pos.up()).getMaterial().isOpaque()) {
+        IBlockState up = world.getBlockState(pos.up());
+        if (up.getMaterial().isOpaque()) {
             turnToSand(world, pos);
+        }
+        else if (up.getBlock() == Blocks.SNOW_LAYER) {
+            world.setBlockState(pos, state.withProperty(ICED, 1));
         }
     }
 
     public void onBlockAdded(World world, BlockPos pos, IBlockState block) {
         super.onBlockAdded(world, pos, block);
-        if (world.getBlockState(pos.up()).getMaterial().isOpaque()) {
+        IBlockState up = world.getBlockState(pos.up());
+        if (up.getMaterial().isOpaque()) {
             turnToSand(world, pos);
+        }
+        else if (up.getBlock() == Blocks.SNOW_LAYER) {
+            world.setBlockState(pos, block.withProperty(ICED, 1));
         }
     }
 
@@ -80,6 +88,7 @@ public class BlockIceHardFarmland extends MyBlock {
     public boolean hasIce(World world, BlockPos pos) {
         Iterator it = BlockPos.getAllInBoxMutable(pos.add(-4, 0, -4), pos.add(4, 1, 4)).iterator();
         BlockPos pos2;
+        if (world.getBlockState(pos.up()).getBlock() == Blocks.SNOW_LAYER) return true;
 
         for (it = it; it.hasNext(); ) {
             pos2 = (BlockPos) it.next();
