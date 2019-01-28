@@ -2,8 +2,10 @@ package com.stdio2016.icehard.worldgen;
 
 import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.BiomeForest;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
@@ -29,6 +31,8 @@ public class IceHardForestBiome extends BiomeForest {
         super(Type.NORMAL, getThisBiomeProperties(name));
         topBlock = RegisterBlock.GRASS_BLOCK.getDefaultState();
         fillerBlock = RegisterBlock.SAND.getDefaultState();
+        flowers.clear();
+        flowers.add(new FlowerEntry(RegisterBlock.FLOWER.getDefaultState(), 20));
     }
 
     @Override
@@ -38,7 +42,7 @@ public class IceHardForestBiome extends BiomeForest {
 
     @Override
     public WorldGenerator getRandomWorldGenForGrass(Random p_getRandomWorldGenForGrass_1_) {
-        return new GenIceHardGrass(RegisterBlock.IceHardTallGrass.getDefaultState());
+        return new GenIceHardGrass();
     }
 
     private static void createTree() {

@@ -25,6 +25,8 @@ public class IceHardPlainsBiome extends Biome {
         super(getThisBiomeProperties(name));
         topBlock = RegisterBlock.GRASS_BLOCK.getDefaultState();
         fillerBlock = RegisterBlock.SAND.getDefaultState();
+        flowers.clear();
+        flowers.add(new FlowerEntry(RegisterBlock.FLOWER.getDefaultState(), 20));
     }
 
     @Override
@@ -34,7 +36,7 @@ public class IceHardPlainsBiome extends Biome {
 
     @Override
     public WorldGenerator getRandomWorldGenForGrass(Random p_getRandomWorldGenForGrass_1_) {
-        return new GenIceHardGrass(RegisterBlock.IceHardTallGrass.getDefaultState());
+        return new GenIceHardGrass();
     }
 
     public static void register() {

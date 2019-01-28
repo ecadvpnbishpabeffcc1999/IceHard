@@ -10,6 +10,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -26,7 +27,7 @@ import java.util.Random;
 // reference:
 // https://github.com/jabelar/ExampleMod-1.12/blob/master/src/main/java/com/blogspot/jabelarminecraft/examplemod/blocks/BlockSaplingCloud.java
 
-public class BlockIceHardSapling extends BlockBush implements IGrowable {
+public class BlockIceHardSapling extends BlockBush implements IGrowable, IBlockIceHard {
     public ItemBlock item;
     public static PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     public static AxisAlignedBB Aabb = new AxisAlignedBB(0.1, 0, 0.1, 0.9, 0.8, 0.9);
@@ -95,5 +96,9 @@ public class BlockIceHardSapling extends BlockBush implements IGrowable {
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(STAGE) << 3;
+    }
+
+    public Item itemBlock() {
+        return item;
     }
 }

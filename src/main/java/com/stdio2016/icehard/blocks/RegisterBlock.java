@@ -35,6 +35,7 @@ public class RegisterBlock {
     public static BlockIceHardTallGrass IceHardTallGrass;
     public static BlockIceHardFarmland IceHardFarmland;
     public static BlockIceHardSapling SAPLING;
+    public static BlockIceHardFlower FLOWER;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -77,16 +78,13 @@ public class RegisterBlock {
         helpAddBlock(SAND);
 
         IceHardLog = new BlockIceHardLog("icehard_log");
-        blocks.add(IceHardLog);
-        items.add(IceHardLog.item);
+        helpAddBlock(IceHardLog);
 
         IceHardLeaves = new BlockIceHardLeaves("icehard_leaves");
-        blocks.add(IceHardLeaves);
-        items.add(IceHardLeaves.item);
+        helpAddBlock(IceHardLeaves);
 
         IceHardTallGrass = new BlockIceHardTallGrass("icehard_grass");
-        blocks.add(IceHardTallGrass);
-        items.add(IceHardTallGrass.item);
+        helpAddBlock(IceHardTallGrass);
 
         IceHardFarmland = new BlockIceHardFarmland("icehard_farmland", Material.GROUND, MapColor.DIRT);
         IceHardFarmland.setSound(SoundType.SAND).setHardness(0.5f);
@@ -95,13 +93,17 @@ public class RegisterBlock {
 
         SAPLING = new BlockIceHardSapling("icehard_sapling");
         SAPLING.setHardness(0.0f);
-        blocks.add(SAPLING);
-        items.add(SAPLING.item);
+        helpAddBlock(SAPLING);
+
+        FLOWER= new BlockIceHardFlower("icehard_flower");
+        FLOWER.setHardness(0.0f);
+        helpAddBlock(FLOWER);
     }
 
-    public static void helpAddBlock(MyBlock block) {
+    public static void helpAddBlock(Block block) {
         blocks.add(block);
-        items.add(block.item);
+        if (block instanceof IBlockIceHard)
+            items.add(((IBlockIceHard)block).itemBlock());
     }
 
     @SubscribeEvent

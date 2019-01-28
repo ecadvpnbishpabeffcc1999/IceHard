@@ -18,7 +18,7 @@ import java.util.Random;
 /**
  * Created by User on 2019/1/27.
  */
-public class BlockIceHardLeaves extends BlockLeaves {
+public class BlockIceHardLeaves extends BlockLeaves implements IBlockIceHard {
     public ItemBlock item;
     public BlockIceHardLeaves(String name) {
         this.setUnlocalizedName(name);
@@ -65,5 +65,9 @@ public class BlockIceHardLeaves extends BlockLeaves {
     @Override
     public List<ItemStack> onSheared(@Nonnull ItemStack itemStack, IBlockAccess iBlockAccess, BlockPos blockPos, int i) {
         return NonNullList.withSize(1, new ItemStack(this, 1));
+    }
+
+    public Item itemBlock() {
+        return item;
     }
 }

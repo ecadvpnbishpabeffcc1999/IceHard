@@ -11,7 +11,7 @@ import net.minecraft.item.ItemBlock;
 /**
  * Created by User on 2019/1/27.
  */
-public class BlockIceHardLog extends BlockLog {
+public class BlockIceHardLog extends BlockLog implements IBlockIceHard {
     public ItemBlock item;
     public BlockIceHardLog(String name) {
         this.setUnlocalizedName(name);
@@ -48,5 +48,9 @@ public class BlockIceHardLog extends BlockLog {
     @Override
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, LOG_AXIS);
+    }
+
+    public Item itemBlock() {
+        return item;
     }
 }

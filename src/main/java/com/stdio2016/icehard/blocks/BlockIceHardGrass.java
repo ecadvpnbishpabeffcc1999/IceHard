@@ -1,5 +1,7 @@
 package com.stdio2016.icehard.blocks;
 
+import com.stdio2016.icehard.worldgen.GenIceHardGrass;
+import net.minecraft.block.BlockGrass;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -39,6 +41,12 @@ public class BlockIceHardGrass extends MyBlock {
                     world.setBlockState(dst, this.getDefaultState());
                 }
             }
+        }
+    }
+
+    public void spreadTallGrass(World world, BlockPos pos, Random rnd) {
+        if (!world.isRemote) {
+            new GenIceHardGrass().generate(world, rnd, pos);
         }
     }
 

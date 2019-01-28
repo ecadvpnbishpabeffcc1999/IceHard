@@ -33,7 +33,7 @@ import java.util.Random;
 /**
  * Created by User on 2019/1/27.
  */
-public class BlockIceHardTallGrass extends BlockBush implements IShearable {
+public class BlockIceHardTallGrass extends BlockBush implements IShearable, IBlockIceHard {
     public ItemBlock item;
     public static AxisAlignedBB Aabb = new AxisAlignedBB(0.1, 0.0, 0.1, 0.9, 0.8, 0.9);
     public BlockIceHardTallGrass(String name) {
@@ -86,5 +86,9 @@ public class BlockIceHardTallGrass extends BlockBush implements IShearable {
 
     public NonNullList<ItemStack> onSheared(ItemStack stack, IBlockAccess world, BlockPos pos, int i) {
         return NonNullList.withSize(1, new ItemStack(this.item, 1));
+    }
+
+    public Item itemBlock() {
+        return item;
     }
 }

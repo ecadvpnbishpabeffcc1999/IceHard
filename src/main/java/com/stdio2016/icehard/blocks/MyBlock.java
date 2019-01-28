@@ -9,6 +9,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -22,7 +23,7 @@ import java.util.Random;
 /**
  * Created by User on 2018/2/15.
  */
-public class MyBlock extends Block {
+public class MyBlock extends Block implements IBlockIceHard {
     public ItemBlock item;
     public boolean freezesWater;
 
@@ -45,6 +46,10 @@ public class MyBlock extends Block {
     public MyBlock setSound(SoundType s) {
        super.setSoundType(s);
        return this;
+    }
+
+    public Item itemBlock() {
+        return item;
     }
 
     @Override
@@ -91,6 +96,8 @@ public class MyBlock extends Block {
         switch (plantType) {
             case Plains:
                 return this == RegisterBlock.SAND || this == RegisterBlock.GRASS_BLOCK;
+            case Crop:
+                return this == RegisterBlock.IceHardFarmland;
         }
         return false;
     }

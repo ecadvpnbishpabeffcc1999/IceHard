@@ -17,8 +17,15 @@ import java.util.Random;
  */
 public class GenIceHardGrass extends WorldGenerator {
     IBlockState grassBlock;
-    public GenIceHardGrass(IBlockState grass) {
+    int howMany;
+    public GenIceHardGrass() {
+        this.grassBlock = RegisterBlock.IceHardTallGrass.getDefaultState();
+        this.howMany = 128;
+    }
+
+    public GenIceHardGrass(IBlockState grass, int howMany) {
         this.grassBlock = grass;
+        this.howMany = howMany;
     }
 
     @Override
@@ -31,10 +38,10 @@ public class GenIceHardGrass extends WorldGenerator {
         }
 
         // random try
-        for (int t = 0; t < 100; t++) {
-            int x = rnd.nextInt(15) - 7;
-            int y = rnd.nextInt(7) - 3;
-            int z = rnd.nextInt(15) - 7;
+        for (int t = 0; t < howMany; t++) {
+            int x = rnd.nextInt(8) - rnd.nextInt(8);
+            int y = rnd.nextInt(4) - rnd.nextInt(4);
+            int z = rnd.nextInt(8) - rnd.nextInt(8);
             BlockPos pos2 = pos.add(x, y, z);
             if (world.isAirBlock(pos2)) {
                 blk = world.getBlockState(pos2.down());
