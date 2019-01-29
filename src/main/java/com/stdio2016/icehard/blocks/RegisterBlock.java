@@ -41,6 +41,8 @@ public class RegisterBlock {
     public static BlockIceHardSapling ICE_SAPLING;
     public static BlockIceHardSapling SAPLING;
     public static BlockIceHardFlower FLOWER;
+    public static BlockHaicerdCrop HAICERD_CROP;
+    public static BlockHaicerdCrop HIRECAD_CROP;
 
     public static void preInit(FMLPreInitializationEvent event) {
         BlockIceHard.registerBlocks();
@@ -115,6 +117,12 @@ public class RegisterBlock {
         FLOWER= new BlockIceHardFlower("icehard_flower");
         FLOWER.setHardness(0.0f);
         helpAddBlock(FLOWER);
+
+        HAICERD_CROP = new BlockHaicerdCrop("haicerd_crop");
+        helpAddBlock(HAICERD_CROP);
+
+        HIRECAD_CROP = new BlockHaicerdCrop("hirecad_crop");
+        helpAddBlock(HIRECAD_CROP);
     }
 
     public static void helpAddBlock(Block block) {

@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "icehard:blocks/hirecad_crop_stage4"
+  }
+}

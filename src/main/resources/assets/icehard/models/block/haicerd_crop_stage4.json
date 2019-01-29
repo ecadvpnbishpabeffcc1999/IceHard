@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "icehard:blocks/haicerd_crop_stage4"
+  }
+}
