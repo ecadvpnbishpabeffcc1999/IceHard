@@ -21,6 +21,7 @@ import java.util.Random;
  */
 public class BlockHaicerdCrop extends BlockCrops implements IBlockIceHard {
     public Item seedItem;
+    public Item cropItem;
     public static final AxisAlignedBB Aabb[] = {
             new AxisAlignedBB(0,0,0,1,0.125,1),
             new AxisAlignedBB(0,0,0,1,0.250,1),
@@ -58,7 +59,7 @@ public class BlockHaicerdCrop extends BlockCrops implements IBlockIceHard {
 
     protected Item getCrop()
     {
-        return RegisterItem.frost;
+        return cropItem;
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

@@ -158,7 +158,9 @@ public class RegisterBlock {
         IceHardIceLeaves.fruitItemStack = null /* TODO:  ice hard cream */;
 
         HAICERD_CROP.seedItem = RegisterItem.HaicerdSeed;
+        HAICERD_CROP.cropItem = BlockIceHard.iceHardItem[5]; /* TODO: edible icehard */
         HIRECAD_CROP.seedItem = RegisterItem.HirecadSeed;
+        HIRECAD_CROP.cropItem = massPile.item;
     }
 
     static {

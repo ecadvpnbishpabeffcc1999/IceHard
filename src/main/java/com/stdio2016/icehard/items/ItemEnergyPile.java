@@ -1,6 +1,11 @@
 package com.stdio2016.icehard.items;
 
+import com.stdio2016.icehard.blocks.BlockHaicerdCrop;
 import com.stdio2016.icehard.blocks.BlockIceHardGrass;
+import com.stdio2016.icehard.blocks.BlockIceHardSapling;
+import com.stdio2016.icehard.blocks.IBlockIceHard;
+import net.minecraft.block.Block;
+import net.minecraft.block.IGrowable;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -31,11 +36,25 @@ public class ItemEnergyPile extends MyItem {
     @Override
     public EnumActionResult onItemUse(EntityPlayer user, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float offsetX, float offsetY, float offsetZ) {
         IBlockState state = world.getBlockState(pos);
-        if (state.getBlock() instanceof BlockIceHardGrass) {
-            ((BlockIceHardGrass) state.getBlock()).spreadTallGrass(world, pos, world.rand);
-            ItemStack stack = user.getHeldItem(hand);
-            if (stack != null) stack.shrink(1);
+        Block block = state.getBlock();
+        if (block instanceof BlockIceHardGrass) {
+            if (!world.isRemote) {
+                ((BlockIceHardGrass) state.getBlock()).spreadTallGrass(world, pos, world.rand);
+                ItemStack stack = user.getHeldItem(hand);
+                if (stack != null) stack.shrink(1);
+            }
             return EnumActionResult.SUCCESS;
+        }
+        if (block instanceof IGrowable && block instanceof IBlockIceHard) {
+            IGrowable crop = (IGrowable) block;
+            if (crop.canGrow(world, pos, state, world.isRemote)) {
+                if (!world.isRemote) {
+                    crop.grow(world, world.rand, pos, state);
+                    ItemStack stack = user.getHeldItem(hand);
+                    if (stack != null) stack.shrink(1);
+                }
+                return EnumActionResult.SUCCESS;
+            }
         }
         return super.onItemUse(user, world, pos, hand, facing, offsetX, offsetY, offsetZ);
     }
