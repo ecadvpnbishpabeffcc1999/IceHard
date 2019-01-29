@@ -25,6 +25,7 @@ public class RegisterItem {
     public static List<Item> items = new ArrayList<>();
     public static final Item.ToolMaterial[] toolSettings = new Item.ToolMaterial[BlockIceHard.MaxLevel];
     public static MyItem[] brokenTool = new MyItem[BlockIceHard.MaxLevel];
+    public static ItemCopperTap copperTap;
     public static MyItem icircuit, iceHeart, energyConvert, massConvert;
     public static ItemSeeds HaicerdSeed, HirecadSeed;
     public static ItemEdibleIceHard edibleIceHard;
@@ -40,6 +41,8 @@ public class RegisterItem {
         items.addAll(ItemIceHardAxe.items);
         items.addAll(ItemIceHardShovel.items);
         items.addAll(ItemIceHardHoe.items);
+        copperTap = new ItemCopperTap("copper_tap", 130);
+        items.add(copperTap);
         for (int i = 0; i < BlockIceHard.MaxLevel; i++) {
             brokenTool[i] = new MyItem("broken_tool_" + BlockIceHard.iceHardNames[i]);
             items.add(brokenTool[i]);

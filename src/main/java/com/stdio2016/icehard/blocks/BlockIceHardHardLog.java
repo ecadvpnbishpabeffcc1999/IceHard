@@ -27,7 +27,7 @@ public class BlockIceHardHardLog extends BlockIceHardLog {
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rnd) {
         super.updateTick(world, pos, state, rnd);
-        if (state.getValue(HAS_TAP) == 0) {
+        if (!world.isRemote && state.getValue(HAS_TAP) == 0 && rnd.nextInt(7) == 0) {
             // add tap
             world.setBlockState(pos, state.withProperty(HAS_TAP, 1));
         }
@@ -50,10 +50,10 @@ public class BlockIceHardHardLog extends BlockIceHardLog {
     public int getMetaFromState(IBlockState state) {
         int i = state.getValue(HAS_TAP);
         switch (state.getValue(LOG_AXIS)) {
-            case Y: i |= 0;
-            case X: i |= 4;
-            case Z: i |= 8;
-            case NONE: i |= 12;
+            case Y: i |= 0; break;
+            case X: i |= 4; break;
+            case Z: i |= 8; break;
+            case NONE: i |= 12; break;
         }
         return i;
     }
