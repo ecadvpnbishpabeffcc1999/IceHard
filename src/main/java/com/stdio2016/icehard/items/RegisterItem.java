@@ -27,6 +27,7 @@ public class RegisterItem {
     public static MyItem[] brokenTool = new MyItem[BlockIceHard.MaxLevel];
     public static MyItem icircuit, iceHeart, energyConvert, massConvert;
     public static ItemSeeds HaicerdSeed, HirecadSeed;
+    public static ItemEdibleIceHard edibleIceHard;
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
@@ -59,6 +60,10 @@ public class RegisterItem {
         HirecadSeed = new ItemHaicerdSeed("hirecad_seed", RegisterBlock.HIRECAD_CROP);
         items.add(HaicerdSeed);
         items.add(HirecadSeed);
+
+        edibleIceHard = new ItemEdibleIceHard("edible_icehard", 0, 0.6f, false);
+        edibleIceHard.setAlwaysEdible();
+        items.add(edibleIceHard);
     }
 
     public static void init(FMLInitializationEvent event) {
