@@ -1,0 +1,6 @@
+{
+  "parent":"minecraft:item/generated",
+  "textures": {
+    "layer0": "icehard:items/hirecad_seed"
+  }
+}

@@ -1,8 +1,10 @@
 package com.stdio2016.icehard.items;
 
 import com.stdio2016.icehard.blocks.BlockIceHard;
+import com.stdio2016.icehard.blocks.RegisterBlock;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -24,6 +26,7 @@ public class RegisterItem {
     public static final Item.ToolMaterial[] toolSettings = new Item.ToolMaterial[BlockIceHard.MaxLevel];
     public static MyItem[] brokenTool = new MyItem[BlockIceHard.MaxLevel];
     public static MyItem icircuit, iceHeart, energyConvert, massConvert;
+    public static ItemSeeds HaicerdSeed, HirecadSeed;
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
@@ -51,6 +54,11 @@ public class RegisterItem {
         items.add(iceHeart);
         items.add(energyConvert);
         items.add(massConvert);
+
+        HaicerdSeed = new ItemHaicerdSeed("haicerd_seed", RegisterBlock.HAICERD_CROP);
+        HirecadSeed = new ItemHaicerdSeed("hirecad_seed", RegisterBlock.HIRECAD_CROP);
+        items.add(HaicerdSeed);
+        items.add(HirecadSeed);
     }
 
     public static void init(FMLInitializationEvent event) {

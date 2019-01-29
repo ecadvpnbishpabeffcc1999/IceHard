@@ -20,6 +20,7 @@ import java.util.Random;
  * Created by User on 2019/1/29.
  */
 public class BlockHaicerdCrop extends BlockCrops implements IBlockIceHard {
+    public Item seedItem;
     public static final AxisAlignedBB Aabb[] = {
             new AxisAlignedBB(0,0,0,1,0.125,1),
             new AxisAlignedBB(0,0,0,1,0.250,1),
@@ -52,7 +53,7 @@ public class BlockHaicerdCrop extends BlockCrops implements IBlockIceHard {
 
     protected Item getSeed()
     {
-        return RegisterBlock.ICE_SAPLING.item;
+        return seedItem;
     }
 
     protected Item getCrop()
@@ -72,6 +73,6 @@ public class BlockHaicerdCrop extends BlockCrops implements IBlockIceHard {
 
     @Override
     public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-        return EnumPlantType.Crop;
+        return RegisterBlock.IceHardCropType;
     }
 }

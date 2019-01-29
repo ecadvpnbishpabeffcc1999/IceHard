@@ -10,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -24,6 +25,8 @@ import java.util.List;
  */
 
 public class RegisterBlock {
+    public static final EnumPlantType IceHardCropType;
+
     public static List<Block> blocks = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
     public static MyBlock massPile;
@@ -153,5 +156,12 @@ public class RegisterBlock {
         RegisterBlock.SAPLING.treeGenerator = IceHardForestBiome.IceHardHardTree;
 
         IceHardIceLeaves.fruitItemStack = null /* TODO:  ice hard cream */;
+
+        HAICERD_CROP.seedItem = RegisterItem.HaicerdSeed;
+        HIRECAD_CROP.seedItem = RegisterItem.HirecadSeed;
+    }
+
+    static {
+        IceHardCropType = EnumPlantType.getPlantType("IceHardCrop");
     }
 }

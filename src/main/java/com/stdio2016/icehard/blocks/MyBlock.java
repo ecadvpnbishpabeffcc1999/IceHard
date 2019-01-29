@@ -97,7 +97,11 @@ public class MyBlock extends Block implements IBlockIceHard {
             case Plains:
                 return this == RegisterBlock.SAND || this == RegisterBlock.GRASS_BLOCK;
             case Crop:
-                return this == RegisterBlock.IceHardFarmland;
+                return false; // You are not supposed to plant vanilla crops on Ice Hard farmland
+            default:
+                if (plantType == RegisterBlock.IceHardCropType) {
+                    return this instanceof BlockIceHardFarmland;
+                }
         }
         return false;
     }
