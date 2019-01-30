@@ -28,7 +28,7 @@ public class RegisterItem {
     public static ItemCopperTap copperTap;
     public static MyItem icircuit, iceHeart, energyConvert, massConvert;
     public static ItemSeeds HaicerdSeed, HirecadSeed;
-    public static ItemEdibleIceHard edibleIceHard;
+    public static ItemEdibleIceHard edibleIceHard, IceHardCream;
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
@@ -67,6 +67,10 @@ public class RegisterItem {
         edibleIceHard = new ItemEdibleIceHard("edible_icehard", 0, 0.6f, false);
         edibleIceHard.setAlwaysEdible();
         items.add(edibleIceHard);
+
+        IceHardCream = new ItemEdibleIceHard("icehard_cream", 0, 0.6f, false);
+        IceHardCream.setAlwaysEdible();
+        items.add(IceHardCream);
     }
 
     public static void init(FMLInitializationEvent event) {

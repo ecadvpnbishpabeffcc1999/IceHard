@@ -78,7 +78,7 @@ public class BlockIceHardLeaves extends BlockLeaves implements IBlockIceHard {
     @Override
     protected void dropApple(World world, BlockPos pos, IBlockState state, int chance) {
         if (fruitItemStack != null &&world.rand.nextInt(chance) == 0) {
-            spawnAsEntity(world, pos, fruitItemStack);
+            spawnAsEntity(world, pos, fruitItemStack.copy());
         }
     }
 }

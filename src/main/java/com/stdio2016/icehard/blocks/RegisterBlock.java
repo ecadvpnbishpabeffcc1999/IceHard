@@ -155,7 +155,7 @@ public class RegisterBlock {
         RegisterBlock.ICE_SAPLING.treeGenerator = IceHardForestBiome.IceHardIceTree;
         RegisterBlock.SAPLING.treeGenerator = IceHardForestBiome.IceHardHardTree;
 
-        IceHardIceLeaves.fruitItemStack = null /* TODO:  ice hard cream */;
+        IceHardIceLeaves.fruitItemStack = new ItemStack(RegisterItem.IceHardCream);
 
         HAICERD_CROP.seedItem = RegisterItem.HaicerdSeed;
         HAICERD_CROP.cropItem = RegisterItem.edibleIceHard;
