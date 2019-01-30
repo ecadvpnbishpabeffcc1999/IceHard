@@ -64,12 +64,14 @@ public class RegisterItem {
         items.add(HaicerdSeed);
         items.add(HirecadSeed);
 
-        edibleIceHard = new ItemEdibleIceHard("edible_icehard", 0, 0.6f, false);
+        edibleIceHard = new ItemEdibleIceHard("edible_icehard", 1, 0.6f, false);
         edibleIceHard.setAlwaysEdible();
+        edibleIceHard.lv = 1;
         items.add(edibleIceHard);
 
-        IceHardCream = new ItemEdibleIceHard("icehard_cream", 0, 0.6f, false);
+        IceHardCream = new ItemEdibleIceHard("icehard_cream", 2, 0.6f, false);
         IceHardCream.setAlwaysEdible();
+        IceHardCream.lv = 2;
         items.add(IceHardCream);
     }
 
