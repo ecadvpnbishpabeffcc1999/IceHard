@@ -12,6 +12,20 @@ tile.cleaner.name=Block Cleaner
 tile.water_cleaner.name=Water Cleaner
 tile.stopper.name=Block Cleaner Stopper
 
+tile.icehard_grass_block.name=Ice Hard Grass Block
+tile.icehard_sand.name=Ice Hard Sand
+tile.icehard_ice_log.name=Ice Hard Ice Wood
+tile.icehard_log.name=Ice Hard Hard Wood
+tile.icehard_ice_leaves.name=Ice Hard Ice Leaves
+tile.icehard_leaves.name=Ice Hard Hard Leaves
+tile.icehard_grass.name=Ice Hard Grass
+tile.icehard_farmland.name=Ice Hard Farmland
+tile.icehard_ice_sapling.name=Ice Hard Ice Sapling
+tile.icehard_sapling.name=Ice Hard Hard Sapling
+tile.icehard_flower.name=Ice Hard Flower
+tile.haicerd_crop.name=Haicerd Crop
+tile.hirecad_crop.name=Hirecad Crop
+
 item.energypile.name=Energy Pile
 item.copper.name=Copper
 item.copper_nugget.name=Copper Nugget
@@ -68,6 +82,13 @@ item.icircuit.name=Icircuit
 item.iceheart.name=Ice Heart
 item.energy_convert.name=Energy Converter
 item.mass_convert.name=Mass Converter
+
+item.haicerd_seed.name=Haicerd Seeds
+item.hirecad_seed.name=Hirecad Seeds
+item.edible_icehard.name=Edible Ice Hard
+item.copper_tap.name=Copper Tap
+item.icehard_cream.name=Ice Hard Cream
+
 itemGroup.icehard=Ice Hard
 
 config.icehard.ice_hard_freezes_water.name=Ice Hard freezes water

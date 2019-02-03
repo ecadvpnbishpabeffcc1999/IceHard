@@ -12,6 +12,20 @@ tile.cleaner.name=方塊清除器
 tile.water_cleaner.name=水清除器
 tile.stopper.name=方塊清除器的停止器
 
+tile.icehard_grass_block.name=冰硬草地
+tile.icehard_sand.name=冰硬沙
+tile.icehard_ice_log.name=冰硬冰木原木
+tile.icehard_log.name=冰硬硬木原木
+tile.icehard_ice_leaves.name=冰硬冰樹葉
+tile.icehard_leaves.name=冰硬硬樹葉
+tile.icehard_grass.name=冰硬草
+tile.icehard_farmland.name=冰硬耕地
+tile.icehard_ice_sapling.name=冰硬冰樹苗
+tile.icehard_sapling.name=冰硬硬樹苗
+tile.icehard_flower.name=冰硬花
+tile.haicerd_crop.name=海瑟德作物
+tile.hirecad_crop.name=希爾凱作物
+
 item.energypile.name=能量堆
 item.copper.name=銅
 item.copper_nugget.name=銅粒
@@ -68,6 +82,13 @@ item.icircuit.name=冰硬電路
 item.iceheart.name=冰心
 item.energy_convert.name=能量轉換器
 item.mass_convert.name=質量轉換器
+
+item.haicerd_seed.name=海瑟德種子
+item.hirecad_seed.name=希爾凱種子
+item.edible_icehard.name=可食用冰硬
+item.copper_tap.name=銅龍頭
+item.icehard_cream.name=冰硬淇淋
+
 itemGroup.icehard=冰硬
 
 config.icehard.ice_hard_freezes_water.name=冰硬可使水結冰
