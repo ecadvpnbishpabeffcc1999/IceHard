@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "icehard:copper_tap"
+  },
+  "pattern": [
+    " c ",
+    "ccc",
+    "c  "
+  ],
+  "key": {
+    "c": {"type": "forge:ore_dict", "ore": "ingotCopper"}
+  }
+}

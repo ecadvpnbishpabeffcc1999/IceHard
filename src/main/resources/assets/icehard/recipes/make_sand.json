@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {"item": "icehard_sand"},
+  "ingredients": [
+    {"item": "icehard_blue"},
+    {"item": "minecraft:sand", "data": 0},
+    {"item": "masspile"}
+  ]
+}

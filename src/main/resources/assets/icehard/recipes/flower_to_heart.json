@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "icehard:iceheart",
+    "count": 1
+  },
+  "pattern": [
+    "fff",
+    "fff",
+    "fff"
+  ],
+  "key": {
+    "f": {"item": "icehard:icehard_flower"}
+  }
+}
