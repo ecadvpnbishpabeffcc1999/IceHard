@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "condensed_energypile"
+  },
+  "ingredients": [
+    {"item": "energypile"},
+    {"item": "energypile"},
+    {"item": "energypile"},
+    {"item": "energypile"},
+    {"item": "energypile"},
+    {"item": "energypile"},
+    {"item": "energypile"},
+    {"item": "energypile"}
+  ]
+}

@@ -36,6 +36,7 @@ public class RegisterItem {
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
+        items.add(ItemEnergyPile.condensed);
         copper = new MyItem("copper");
         items.add(copper);
         copperNugget = new MyItem("copper_nugget");

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "masspile",
+    "count": 8
+  },
+  "pattern": [
+    "i"
+  ],
+  "key": {
+    "i": {"item": "packed_masspile"}
+  }
+}

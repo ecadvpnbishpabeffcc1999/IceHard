@@ -7,6 +7,7 @@ tile.icehard_purple.name=Purple Ice Hard
 tile.icehard_light.name=Light Ice Hard
 tile.packed_icehard_blue.name=Packed Ice Hard
 tile.masspile.name=Mass Pile
+tile.packed_masspile.name=Packed Mass Pile
 
 tile.cleaner.name=Block Cleaner
 tile.water_cleaner.name=Water Cleaner
@@ -27,6 +28,7 @@ tile.haicerd_crop.name=Haicerd Crop
 tile.hirecad_crop.name=Hirecad Crop
 
 item.energypile.name=Energy Pile
+item.condensed_energypile.name=Condensed Energy Pile
 item.copper.name=Copper
 item.copper_nugget.name=Copper Nugget
 item.icehard_sword_blue.name=Blue Ice Hard Sword

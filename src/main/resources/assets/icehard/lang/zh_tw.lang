@@ -7,6 +7,7 @@ tile.icehard_purple.name=紫色冰硬
 tile.icehard_light.name=冰硬光
 tile.packed_icehard_blue.name=冰硬磚
 tile.masspile.name=質量堆
+tile.packed_masspile.name=質量磚
 
 tile.cleaner.name=方塊清除器
 tile.water_cleaner.name=水清除器
@@ -27,6 +28,7 @@ tile.haicerd_crop.name=海瑟德作物
 tile.hirecad_crop.name=希爾凱作物
 
 item.energypile.name=能量堆
+item.condensed_energypile.name=高密度能量堆
 item.copper.name=銅
 item.copper_nugget.name=銅粒
 item.icehard_sword_blue.name=藍之冰硬劍

@@ -29,7 +29,7 @@ public class RegisterBlock {
 
     public static List<Block> blocks = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
-    public static MyBlock massPile;
+    public static MyBlock massPile, packedMassPile;
     public static MyBlock cleaner;
     public static MyBlock stopper;
     public static MyBlock waterCleaner;
@@ -57,6 +57,11 @@ public class RegisterBlock {
         massPile.setSound(SoundType.GLASS).setHardness(5f).setResistance(16.0f);
         massPile.setHarvestLevel("pickaxe", 1);
         helpAddBlock(massPile);
+
+        packedMassPile = new MyBlock("packed_masspile", Material.ROCK, MapColor.LIGHT_BLUE);
+        packedMassPile.setSound(SoundType.GLASS).setHardness(5f).setResistance(16.0f);
+        packedMassPile.setHarvestLevel("pickaxe", 1);
+        helpAddBlock(packedMassPile);
 
         cleaner = new BlockCleaner("cleaner", Material.GRASS, MapColor.LIGHT_BLUE);
         cleaner.setSound(SoundType.PLANT).setHardness(0f).setResistance(16.0f);

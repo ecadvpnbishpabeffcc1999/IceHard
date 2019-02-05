@@ -21,16 +21,18 @@ import net.minecraft.world.World;
  * Created by User on 2018/1/23.
  */
 public class ItemEnergyPile extends MyItem {
-    public static Item item = new ItemEnergyPile();
-    public static final String name = "energypile";
+    public static Item item = new ItemEnergyPile("energypile", 200);
+    public static Item condensed = new ItemEnergyPile("condensed_energypile", 200 * 8);
+    public int burnTime;
 
-    protected ItemEnergyPile() {
+    protected ItemEnergyPile(String name, int power) {
         super(name);
+        burnTime = power;
     }
 
     @Override
     public int getItemBurnTime(ItemStack stack) {
-        return 200; // smelt just 1 item
+        return burnTime;
     }
 
     @Override

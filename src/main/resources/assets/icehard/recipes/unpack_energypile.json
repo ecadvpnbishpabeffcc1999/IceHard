@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "energypile",
+    "count": 8
+  },
+  "pattern": [
+    "i"
+  ],
+  "key": {
+    "i": {"item": "condensed_energypile"}
+  }
+}
