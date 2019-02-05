@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "soft_ice_cream",
+  "result": {"item": "soft_ice_cream"},
+  "ingredients": [
+    {"type": "forge:ore_dict", "ore": "listAllmilk"},
+    {"item": "frost"}
+  ]
+}

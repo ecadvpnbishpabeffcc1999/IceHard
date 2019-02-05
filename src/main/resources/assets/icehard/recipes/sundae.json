@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {"item": "sundae"},
+  "ingredients": [
+    {"item": "cake_slice"},
+    {"item": "hard_ice_cream"},
+    {"item": "soft_ice_cream"},
+    {"item": "minecraft:sugar"},
+    {"item": "minecraft:dye", "data": 3},
+    {"item": "minecraft:melon"}
+  ]
+}

@@ -38,6 +38,22 @@ public class ItemEdibleIceHard extends ItemFood {
                 player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10*20,  1, false, true));
                 player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 20*20, 0, false, true));
             }
+            else if (lv == 3) {
+                player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 10*20,  2, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 40*20, 0, false, true));
+            }
+            else if (lv == 4) {
+                player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 10*20,  0, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 10*20, 0, false, true));
+            }
+            else if (lv == 5) {
+                player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 60*20, 0, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 60*20, 0, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 60*20, 0, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 60*20, 0, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 60*20, 0, false, true));
+                player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 10*20, 0, false, true));
+            }
         }
     }
 }

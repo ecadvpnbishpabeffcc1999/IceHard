@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {"item": "cake_slice", "count": 6},
+  "ingredients": [
+    {"item": "minecraft:cake"}
+  ]
+}

@@ -1,9 +1,11 @@
 package com.stdio2016.icehard.items;
 
+import com.stdio2016.icehard.IceHardMod;
 import com.stdio2016.icehard.blocks.BlockIceHard;
 import com.stdio2016.icehard.blocks.RegisterBlock;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -29,6 +31,8 @@ public class RegisterItem {
     public static MyItem icircuit, iceHeart, energyConvert, massConvert;
     public static ItemSeeds HaicerdSeed, HirecadSeed;
     public static ItemEdibleIceHard edibleIceHard, IceHardCream;
+    public static ItemEdibleIceHard HardIceCream, SoftIceCream, Sundae;
+    public static ItemFood CakeSlice;
 
     public static void preInit(FMLPreInitializationEvent event) {
         items.add(ItemEnergyPile.item);
@@ -41,7 +45,7 @@ public class RegisterItem {
         items.addAll(ItemIceHardAxe.items);
         items.addAll(ItemIceHardShovel.items);
         items.addAll(ItemIceHardHoe.items);
-        copperTap = new ItemCopperTap("copper_tap", 130);
+        copperTap = new ItemCopperTap("copper_tap", 640);
         items.add(copperTap);
         for (int i = 0; i < BlockIceHard.MaxLevel; i++) {
             brokenTool[i] = new MyItem("broken_tool_" + BlockIceHard.iceHardNames[i]);
@@ -73,11 +77,32 @@ public class RegisterItem {
         IceHardCream.setAlwaysEdible();
         IceHardCream.lv = 2;
         items.add(IceHardCream);
+
+        HardIceCream = new ItemEdibleIceHard("hard_ice_cream", 4, 1.2f, false);
+        HardIceCream.setAlwaysEdible();
+        HardIceCream.lv = 3;
+        items.add(HardIceCream);
+
+        SoftIceCream = new ItemEdibleIceHard("soft_ice_cream", 2, 0.6f, false);
+        SoftIceCream.setAlwaysEdible();
+        SoftIceCream.lv = 4;
+        items.add(SoftIceCream);
+
+        CakeSlice = new ItemFood(2, 0.8f, false);
+        CakeSlice.setRegistryName("cake_slice").setUnlocalizedName("cake_slice");
+        CakeSlice.setCreativeTab(IceHardMod.ourTab);
+        items.add(CakeSlice);
+
+        Sundae = new ItemEdibleIceHard("sundae", 10, 1.2f, false);
+        Sundae.setAlwaysEdible();
+        Sundae.lv = 5;
+        items.add(Sundae);
     }
 
     public static void init(FMLInitializationEvent event) {
         OreDictionary.registerOre("ingotCopper", copper);
         OreDictionary.registerOre("listAllwater", Items.WATER_BUCKET);
+        OreDictionary.registerOre("listAllmilk", Items.MILK_BUCKET);
         for (int i = 1; i < BlockIceHard.MaxLevel; i++) {
             String lv = "icehard_copper_lv" + i + "_up";
             for (int j = i-1; j < BlockIceHard.MaxLevel; j++) {
