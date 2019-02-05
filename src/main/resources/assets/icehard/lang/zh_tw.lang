@@ -88,6 +88,10 @@ item.hirecad_seed.name=希爾凱種子
 item.edible_icehard.name=可食用冰硬
 item.copper_tap.name=銅龍頭
 item.icehard_cream.name=冰硬淇淋
+item.hard_ice_cream.name=硬冰淇淋
+item.soft_ice_cream.name=軟冰淇淋
+item.cake_slice.name=蛋糕片
+item.sundae.name=聖代
 
 itemGroup.icehard=冰硬
 

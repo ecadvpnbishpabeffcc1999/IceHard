@@ -1,6 +1,6 @@
 {
   "parent":"minecraft:item/generated",
   "textures": {
-    "layer0": "icehard:items/frost"
+    "layer0": "icehard:items/hard_ice_cream"
   }
 }

@@ -88,6 +88,10 @@ item.hirecad_seed.name=Hirecad Seeds
 item.edible_icehard.name=Edible Ice Hard
 item.copper_tap.name=Copper Tap
 item.icehard_cream.name=Ice Hard Cream
+item.hard_ice_cream.name=Hard Ice Cream
+item.soft_ice_cream.name=Soft Ice Cream
+item.cake_slice.name=Cake Slice
+item.sundae.name=Sundae
 
 itemGroup.icehard=Ice Hard
 
